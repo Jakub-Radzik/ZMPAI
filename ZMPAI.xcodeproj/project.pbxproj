@@ -14,6 +14,7 @@
 		3136A07C2CAD9BED00C7DFD8 /* ZMPAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A07B2CAD9BED00C7DFD8 /* ZMPAITests.swift */; };
 		3136A0862CAD9BED00C7DFD8 /* ZMPAIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0852CAD9BED00C7DFD8 /* ZMPAIUITests.swift */; };
 		3136A0882CAD9BED00C7DFD8 /* ZMPAIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0872CAD9BED00C7DFD8 /* ZMPAIUITestsLaunchTests.swift */; };
+		3136A0952CADA2A500C7DFD8 /* TabNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0942CADA2A500C7DFD8 /* TabNavigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		3136A0812CAD9BED00C7DFD8 /* ZMPAIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZMPAIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3136A0852CAD9BED00C7DFD8 /* ZMPAIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPAIUITests.swift; sourceTree = "<group>"; };
 		3136A0872CAD9BED00C7DFD8 /* ZMPAIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPAIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3136A0942CADA2A500C7DFD8 /* TabNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				3136A06C2CAD9BEC00C7DFD8 /* ContentView.swift */,
 				3136A06E2CAD9BED00C7DFD8 /* Assets.xcassets */,
 				3136A0702CAD9BED00C7DFD8 /* Preview Content */,
+				3136A0942CADA2A500C7DFD8 /* TabNavigator.swift */,
 			);
 			path = ZMPAI;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3136A06D2CAD9BEC00C7DFD8 /* ContentView.swift in Sources */,
+				3136A0952CADA2A500C7DFD8 /* TabNavigator.swift in Sources */,
 				3136A06B2CAD9BEC00C7DFD8 /* ZMPAIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
