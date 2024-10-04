@@ -8,13 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		3136A06B2CAD9BEC00C7DFD8 /* ZMPAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A06A2CAD9BEC00C7DFD8 /* ZMPAIApp.swift */; };
-		3136A06D2CAD9BEC00C7DFD8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A06C2CAD9BEC00C7DFD8 /* ContentView.swift */; };
 		3136A06F2CAD9BED00C7DFD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3136A06E2CAD9BED00C7DFD8 /* Assets.xcassets */; };
 		3136A0722CAD9BED00C7DFD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3136A0712CAD9BED00C7DFD8 /* Preview Assets.xcassets */; };
 		3136A07C2CAD9BED00C7DFD8 /* ZMPAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A07B2CAD9BED00C7DFD8 /* ZMPAITests.swift */; };
 		3136A0862CAD9BED00C7DFD8 /* ZMPAIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0852CAD9BED00C7DFD8 /* ZMPAIUITests.swift */; };
 		3136A0882CAD9BED00C7DFD8 /* ZMPAIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0872CAD9BED00C7DFD8 /* ZMPAIUITestsLaunchTests.swift */; };
 		3136A0952CADA2A500C7DFD8 /* TabNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0942CADA2A500C7DFD8 /* TabNavigator.swift */; };
+		3136A0972CAED40E00C7DFD8 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0962CAED40E00C7DFD8 /* CategoryView.swift */; };
+		3136A0992CAFB27200C7DFD8 /* MyBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0982CAFB27200C7DFD8 /* MyBooksView.swift */; };
+		3136A09B2CAFBA3300C7DFD8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A09A2CAFBA3300C7DFD8 /* MainView.swift */; };
+		3136A09D2CAFBB6400C7DFD8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A09C2CAFBB6400C7DFD8 /* ProfileView.swift */; };
+		3136A09F2CAFBC9E00C7DFD8 /* BooksCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A09E2CAFBC9E00C7DFD8 /* BooksCategoryView.swift */; };
+		3136A0A12CAFBE5200C7DFD8 /* BookPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0A02CAFBE5200C7DFD8 /* BookPresentationView.swift */; };
+		3136A0A32CAFC50B00C7DFD8 /* AudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0A22CAFC50B00C7DFD8 /* AudioView.swift */; };
+		3136A0A82CAFC83E00C7DFD8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0A72CAFC83E00C7DFD8 /* Store.swift */; };
+		3136A0AC2CB00B3900C7DFD8 /* ReadBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0AB2CB00B3900C7DFD8 /* ReadBookView.swift */; };
+		3136A0B42CB064E500C7DFD8 /* YouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0B32CB064E500C7DFD8 /* YouTubePlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +46,6 @@
 /* Begin PBXFileReference section */
 		3136A0672CAD9BEC00C7DFD8 /* ZMPAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMPAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3136A06A2CAD9BEC00C7DFD8 /* ZMPAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPAIApp.swift; sourceTree = "<group>"; };
-		3136A06C2CAD9BEC00C7DFD8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3136A06E2CAD9BED00C7DFD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3136A0712CAD9BED00C7DFD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3136A0772CAD9BED00C7DFD8 /* ZMPAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZMPAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +54,16 @@
 		3136A0852CAD9BED00C7DFD8 /* ZMPAIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPAIUITests.swift; sourceTree = "<group>"; };
 		3136A0872CAD9BED00C7DFD8 /* ZMPAIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPAIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3136A0942CADA2A500C7DFD8 /* TabNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigator.swift; sourceTree = "<group>"; };
+		3136A0962CAED40E00C7DFD8 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		3136A0982CAFB27200C7DFD8 /* MyBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksView.swift; sourceTree = "<group>"; };
+		3136A09A2CAFBA3300C7DFD8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3136A09C2CAFBB6400C7DFD8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3136A09E2CAFBC9E00C7DFD8 /* BooksCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCategoryView.swift; sourceTree = "<group>"; };
+		3136A0A02CAFBE5200C7DFD8 /* BookPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPresentationView.swift; sourceTree = "<group>"; };
+		3136A0A22CAFC50B00C7DFD8 /* AudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioView.swift; sourceTree = "<group>"; };
+		3136A0A72CAFC83E00C7DFD8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		3136A0AB2CB00B3900C7DFD8 /* ReadBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBookView.swift; sourceTree = "<group>"; };
+		3136A0B32CB064E500C7DFD8 /* YouTubePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +114,12 @@
 		3136A0692CAD9BEC00C7DFD8 /* ZMPAI */ = {
 			isa = PBXGroup;
 			children = (
+				3136A0A62CAFC7D100C7DFD8 /* Store */,
+				3136A0A52CAFC6FA00C7DFD8 /* Views */,
+				3136A0A42CAFC6F000C7DFD8 /* Components */,
 				3136A06A2CAD9BEC00C7DFD8 /* ZMPAIApp.swift */,
-				3136A06C2CAD9BEC00C7DFD8 /* ContentView.swift */,
 				3136A06E2CAD9BED00C7DFD8 /* Assets.xcassets */,
 				3136A0702CAD9BED00C7DFD8 /* Preview Content */,
-				3136A0942CADA2A500C7DFD8 /* TabNavigator.swift */,
 			);
 			path = ZMPAI;
 			sourceTree = "<group>";
@@ -128,6 +147,38 @@
 				3136A0872CAD9BED00C7DFD8 /* ZMPAIUITestsLaunchTests.swift */,
 			);
 			path = ZMPAIUITests;
+			sourceTree = "<group>";
+		};
+		3136A0A42CAFC6F000C7DFD8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3136A0A22CAFC50B00C7DFD8 /* AudioView.swift */,
+				3136A0B32CB064E500C7DFD8 /* YouTubePlayerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3136A0A52CAFC6FA00C7DFD8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3136A0962CAED40E00C7DFD8 /* CategoryView.swift */,
+				3136A0982CAFB27200C7DFD8 /* MyBooksView.swift */,
+				3136A09A2CAFBA3300C7DFD8 /* MainView.swift */,
+				3136A09C2CAFBB6400C7DFD8 /* ProfileView.swift */,
+				3136A09E2CAFBC9E00C7DFD8 /* BooksCategoryView.swift */,
+				3136A0A02CAFBE5200C7DFD8 /* BookPresentationView.swift */,
+				3136A0942CADA2A500C7DFD8 /* TabNavigator.swift */,
+				3136A0AB2CB00B3900C7DFD8 /* ReadBookView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3136A0A62CAFC7D100C7DFD8 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				3136A0A72CAFC83E00C7DFD8 /* Store.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +311,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3136A06D2CAD9BEC00C7DFD8 /* ContentView.swift in Sources */,
+				3136A0B42CB064E500C7DFD8 /* YouTubePlayerView.swift in Sources */,
+				3136A09F2CAFBC9E00C7DFD8 /* BooksCategoryView.swift in Sources */,
+				3136A0992CAFB27200C7DFD8 /* MyBooksView.swift in Sources */,
+				3136A09B2CAFBA3300C7DFD8 /* MainView.swift in Sources */,
 				3136A0952CADA2A500C7DFD8 /* TabNavigator.swift in Sources */,
+				3136A0A32CAFC50B00C7DFD8 /* AudioView.swift in Sources */,
+				3136A0A82CAFC83E00C7DFD8 /* Store.swift in Sources */,
+				3136A0972CAED40E00C7DFD8 /* CategoryView.swift in Sources */,
+				3136A0AC2CB00B3900C7DFD8 /* ReadBookView.swift in Sources */,
+				3136A09D2CAFBB6400C7DFD8 /* ProfileView.swift in Sources */,
 				3136A06B2CAD9BEC00C7DFD8 /* ZMPAIApp.swift in Sources */,
+				3136A0A12CAFBE5200C7DFD8 /* BookPresentationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,17 +1,12 @@
-//
-//  ZMPAIApp.swift
-//  ZMPAI
-//
-//  Created by Jakub Radzik on 02/10/2024.
-//
-
 import SwiftUI
 
 @main
 struct ZMPAIApp: App {
+    @StateObject private var bookStore = BookStore()
+    
     var body: some Scene {
         WindowGroup {
-            TabNavigator()
+            TabNavigator().environmentObject(bookStore)
         }
     }
 }
