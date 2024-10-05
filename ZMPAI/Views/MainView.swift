@@ -47,6 +47,7 @@ struct MainView: View {
                         }
                         .frame(height: 200)
                     }
+                    .accessibilityIdentifier("weeklyBook")
                     
                             VStack(alignment: .leading, spacing: 10) {
                                 

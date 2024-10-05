@@ -62,9 +62,33 @@ struct Book: Identifiable, Equatable {
             self.genre = genre
             self.image = image
             self.audioName = audioName
-            self.pages = 5
+            self.pages = 100
             self.pageContents = Book.generateRandomPageContents(count: 5)
             self.progress = 0
+    }
+    
+    init(title: String, author: String, description: String, genre: Genre, image: String, pages: Int, progress: Int, audioName: String? = nil) {
+            self.title = title
+            self.author = author
+            self.description = description
+            self.genre = genre
+            self.image = image
+            self.audioName = audioName
+            self.pages = pages
+            self.pageContents = Book.generateRandomPageContents(count: 5)
+            self.progress = progress
+    }
+    
+    init(title: String, author: String, description: String, genre: Genre, image: String, pages: Int, progress: Int, pageContents: [String], audioName: String? = nil) {
+            self.title = title
+            self.author = author
+            self.description = description
+            self.genre = genre
+            self.image = image
+            self.audioName = audioName
+            self.pages = pages
+            self.pageContents = pageContents
+            self.progress = progress
     }
     
     private static func generateRandomPageContents(count: Int) -> [String] {

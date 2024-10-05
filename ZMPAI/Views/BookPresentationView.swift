@@ -24,6 +24,7 @@ struct BookPresentationView: View {
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
                 .padding(.top)
+                .accessibilityIdentifier("bookTitle")
 
             HStack(spacing: 2) {
                 ForEach(1...5, id: \.self) { index in

@@ -41,11 +41,13 @@ struct ReadBookView: View {
                                 .background(Color.blue)
                                 .cornerRadius(10)
                         }
+                        .accessibilityIdentifier("previousPageButton")
                         .disabled(currentPage == 0)
 
                         Text("Strona \(currentPage+1) / \(book.pages)")
                             .font(.headline)
                             .padding()
+                            .accessibilityIdentifier("pageText")
 
                         Button(action: {
                             nextPage()
@@ -57,6 +59,7 @@ struct ReadBookView: View {
                                 .background(Color.blue)
                                 .cornerRadius(10)
                         }
+                        .accessibilityIdentifier("nextPageButton")
                         .disabled(currentPage+1 == book.pages)
                     }
                     .padding(.horizontal)
