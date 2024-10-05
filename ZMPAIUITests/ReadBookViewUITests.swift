@@ -2,7 +2,7 @@ import XCTest
 
 final class ReadBookViewUITests: XCTestCase {
 
-    func testNextPageButtonIncrementsCurrentPage() throws {
+    func testWeeklyBookTitleAfterNavigateToBookPresentationView() throws {
         let app = XCUIApplication()
         app.launch()
 

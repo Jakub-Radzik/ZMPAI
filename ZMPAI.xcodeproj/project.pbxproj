@@ -10,8 +10,6 @@
 		3136A06B2CAD9BEC00C7DFD8 /* ZMPAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A06A2CAD9BEC00C7DFD8 /* ZMPAIApp.swift */; };
 		3136A06F2CAD9BED00C7DFD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3136A06E2CAD9BED00C7DFD8 /* Assets.xcassets */; };
 		3136A0722CAD9BED00C7DFD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3136A0712CAD9BED00C7DFD8 /* Preview Assets.xcassets */; };
-		3136A0862CAD9BED00C7DFD8 /* ZMPAIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0852CAD9BED00C7DFD8 /* ZMPAIUITests.swift */; };
-		3136A0882CAD9BED00C7DFD8 /* ZMPAIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0872CAD9BED00C7DFD8 /* ZMPAIUITestsLaunchTests.swift */; };
 		3136A0952CADA2A500C7DFD8 /* TabNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0942CADA2A500C7DFD8 /* TabNavigator.swift */; };
 		3136A0972CAED40E00C7DFD8 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0962CAED40E00C7DFD8 /* CategoryView.swift */; };
 		3136A0992CAFB27200C7DFD8 /* MyBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0982CAFB27200C7DFD8 /* MyBooksView.swift */; };
@@ -24,7 +22,6 @@
 		3136A0AC2CB00B3900C7DFD8 /* ReadBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0AB2CB00B3900C7DFD8 /* ReadBookView.swift */; };
 		3136A0B42CB064E500C7DFD8 /* YouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0B32CB064E500C7DFD8 /* YouTubePlayerView.swift */; };
 		3136A0B62CB172EB00C7DFD8 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0B52CB172EB00C7DFD8 /* StoreTests.swift */; };
-		3136A0C02CB1789B00C7DFD8 /* ReadViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0BF2CB1789B00C7DFD8 /* ReadViewUITests.swift */; };
 		3136A0C22CB178BE00C7DFD8 /* ReadBookViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0C12CB178BE00C7DFD8 /* ReadBookViewUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,8 +49,6 @@
 		3136A0712CAD9BED00C7DFD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3136A0772CAD9BED00C7DFD8 /* ZMPAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZMPAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3136A0812CAD9BED00C7DFD8 /* ZMPAIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZMPAIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3136A0852CAD9BED00C7DFD8 /* ZMPAIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPAIUITests.swift; sourceTree = "<group>"; };
-		3136A0872CAD9BED00C7DFD8 /* ZMPAIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPAIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3136A0942CADA2A500C7DFD8 /* TabNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigator.swift; sourceTree = "<group>"; };
 		3136A0962CAED40E00C7DFD8 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		3136A0982CAFB27200C7DFD8 /* MyBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksView.swift; sourceTree = "<group>"; };
@@ -66,7 +61,6 @@
 		3136A0AB2CB00B3900C7DFD8 /* ReadBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBookView.swift; sourceTree = "<group>"; };
 		3136A0B32CB064E500C7DFD8 /* YouTubePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerView.swift; sourceTree = "<group>"; };
 		3136A0B52CB172EB00C7DFD8 /* StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
-		3136A0BF2CB1789B00C7DFD8 /* ReadViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewUITests.swift; sourceTree = "<group>"; };
 		3136A0C12CB178BE00C7DFD8 /* ReadBookViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBookViewUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,9 +141,6 @@
 		3136A0842CAD9BED00C7DFD8 /* ZMPAIUITests */ = {
 			isa = PBXGroup;
 			children = (
-				3136A0852CAD9BED00C7DFD8 /* ZMPAIUITests.swift */,
-				3136A0872CAD9BED00C7DFD8 /* ZMPAIUITestsLaunchTests.swift */,
-				3136A0BF2CB1789B00C7DFD8 /* ReadViewUITests.swift */,
 				3136A0C12CB178BE00C7DFD8 /* ReadBookViewUITests.swift */,
 			);
 			path = ZMPAIUITests;
@@ -344,9 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3136A0882CAD9BED00C7DFD8 /* ZMPAIUITestsLaunchTests.swift in Sources */,
-				3136A0C02CB1789B00C7DFD8 /* ReadViewUITests.swift in Sources */,
-				3136A0862CAD9BED00C7DFD8 /* ZMPAIUITests.swift in Sources */,
 				3136A0C22CB178BE00C7DFD8 /* ReadBookViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
