@@ -29,6 +29,7 @@ struct BooksCategoryView: View {
                                 .truncationMode(.tail)
                                 .frame(height: 20)
                                 .padding(.top, 4)
+                                .foregroundColor(.black)
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -45,16 +46,15 @@ struct BooksCategoryView: View {
 
 struct BooksCategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        let bookStore = BookStore() // Create an instance of BookStore
+        let bookStore = BookStore()
+        
         bookStore.books = [
-            // Sample data for preview
             Book(title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship.", genre: .technical, image: "you_dont_know_js"),
             Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: .technical, image: "swift"),
             Book(title: "Introduction to Algorithms", author: "Thomas H. Cormen et al.", description: "A comprehensive textbook on algorithms.", genre: .technical, image: "swift")
         ]
 
-        // Provide the environment object for the preview
-        return NavigationView { // Wrap in NavigationView to provide navigation context
+        return NavigationView {
             BooksCategoryView(categoryName: Genre.technical)
                 .environmentObject(bookStore)
         }

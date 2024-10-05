@@ -43,7 +43,7 @@ struct ReadBookView: View {
                         }
                         .disabled(currentPage == 0)
 
-                        Text("Page \(currentPage+1) / \(book.pages)")
+                        Text("Strona \(currentPage+1) / \(book.pages)")
                             .font(.headline)
                             .padding()
 
@@ -81,7 +81,6 @@ struct ReadBookView: View {
         }
     }
 
-    // Decrement page
     private func previousPage() {
         if currentPage+1 > 0 {
             bookStore.decrementPage(for: book.id)

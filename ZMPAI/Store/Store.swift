@@ -86,7 +86,6 @@ struct Book: Identifiable, Equatable {
 
 class BookStore: ObservableObject {
     @Published var books: [Book] = [
-        // Fantasy Genre
         Book(title: "The Hobbit", author: "J.R.R. Tolkien", description: "A fantasy novel about the adventures of Bilbo Baggins.", genre: .fantasy, image: "hobbit"),
         Book(title: "Harry Potter and the Sorcerer's Stone", author: "J.K. Rowling", description: "The first book in the Harry Potter series.", genre: .fantasy, image: "hp_1"),
         Book(title: "A Song of Ice and Fire", author: "George R.R. Martin", description: "A series of epic fantasy novels.", genre: .fantasy, image: "song_ice_fire"),
@@ -94,14 +93,12 @@ class BookStore: ObservableObject {
         Book(title: "Mistborn: The Final Empire", author: "Brandon Sanderson", description: "A unique take on the fantasy genre.", genre: .fantasy, image: "final_empire"),
         Book(title: "Lord of the rings: The Fellowship of the ring", author: "J.R.R. Tolkien", description: "A fantasy novel about the adventures of Frodo Baggins.", genre: .fantasy, image: "lotr_1", audioName: "lotr_1_audio"),
         
-        // Science Fiction Genre
         Book(title: "Dune", author: "Frank Herbert", description: "A science fiction novel about politics and power on the desert planet Arrakis.", genre: .scienceFiction, image: "dune"),
         Book(title: "Neuromancer", author: "William Gibson", description: "A cyberpunk novel that helped define the genre.", genre: .scienceFiction, image: "neuromancer"),
         Book(title: "Foundation", author: "Isaac Asimov", description: "A science fiction series that explores the future of humanity.", genre: .scienceFiction, image: "foundation"),
         Book(title: "Snow Crash", author: "Neal Stephenson", description: "A fast-paced cyberpunk novel.", genre: .scienceFiction, image: "snow_crash"),
         Book(title: "The Martian", author: "Andy Weir", description: "A gripping tale of survival on Mars.", genre: .scienceFiction, image: "the_martian"),
         
-        // Technical Genre
         Book(title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship.", genre: .technical, image: "clean_code"),
         Book(title: "Design Patterns: Elements of Reusable Object-Oriented Software", author: "Erich Gamma et al.", description: "A book on software design patterns.", genre: .technical, image: "design_patterns"),
         Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: .technical, image: "pragmatic"),

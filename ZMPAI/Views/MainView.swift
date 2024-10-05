@@ -94,19 +94,19 @@ struct MainView: View {
                                             Text("Fantasy")
                                                 .font(.headline)
                                                 .padding()
-                                                .background(Color.blue.opacity(0.1)) // Light blue background
+                                                .background(Color.blue.opacity(0.1))
                                                 .cornerRadius(8)
-                                                .foregroundColor(.blue) // Text color
+                                                .foregroundColor(.blue)
                                         }
-                                        .buttonStyle(PlainButtonStyle()) // Remove default button style for better appearance
+                                        .buttonStyle(PlainButtonStyle())
                                         
                                         NavigationLink(destination: BooksCategoryView(categoryName: .technical)) {
-                                            Text("Technical")
+                                            Text("Literatura techniczna")
                                                 .font(.headline)
                                                 .padding()
-                                                .background(Color.green.opacity(0.1)) // Light green background
+                                                .background(Color.green.opacity(0.1))
                                                 .cornerRadius(8)
-                                                .foregroundColor(.green) // Text color
+                                                .foregroundColor(.green)
                                         }
                                         .buttonStyle(PlainButtonStyle())
                                         
@@ -114,9 +114,9 @@ struct MainView: View {
                                             Text("Science Fiction")
                                                 .font(.headline)
                                                 .padding()
-                                                .background(Color.red.opacity(0.1)) // Light red background
+                                                .background(Color.red.opacity(0.1))
                                                 .cornerRadius(8)
-                                                .foregroundColor(.red) // Text color
+                                                .foregroundColor(.red)
                                         }
                                         .buttonStyle(PlainButtonStyle())
                                     }

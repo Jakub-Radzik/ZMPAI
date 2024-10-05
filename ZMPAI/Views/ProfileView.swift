@@ -45,12 +45,12 @@ struct ProfileView: View {
                     .padding(.horizontal, 16)
                 
                 VStack {
-                    Text("Books Rented: \(bookStore.myBooks.count)")
+                    Text("Ksiązki wypożyczone: \(bookStore.myBooks.count)")
                         .font(.headline)
                         .padding(.top, 16)
 
                     let finishedBooksCount = bookStore.myBooks.filter { $0.progress == $0.pages }.count
-                    Text("Books Finished: \(finishedBooksCount)")
+                    Text("Książki przeczytane: \(finishedBooksCount)")
                         .font(.headline)
                         .padding(.top, 8)
                 }

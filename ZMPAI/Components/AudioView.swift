@@ -23,7 +23,7 @@ struct AudioView: View {
 
     func stopAudio() {
         audioPlayer?.stop()
-        isPlaying = false // Set the state to stopped
+        isPlaying = false
     }
 
     var body: some View {
