@@ -8,24 +8,28 @@ struct TabNavigator: View {
                     Image(systemName: "house.fill")
                     Text("Strona główna")
                 }
+                .accessibilityIdentifier("homeTab")
             
             CategoryView()
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Kategorie")
                 }
+                .accessibilityIdentifier("categoriesTab")
             
             MyBooksView()
                 .tabItem {
                     Image(systemName: "book.fill")
                     Text("Twoje książki")
                 }
+                .accessibilityIdentifier("bookTab")
             
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profil")
                 }
+                .accessibilityIdentifier("profileTab")
         }
     }
 }

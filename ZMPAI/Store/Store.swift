@@ -63,7 +63,7 @@ struct Book: Identifiable, Equatable {
             self.image = image
             self.audioName = audioName
             self.pages = 100
-            self.pageContents = Book.generateRandomPageContents(count: 5)
+            self.pageContents = Book.generateRandomPageContents(count: 100)
             self.progress = 0
     }
     
@@ -75,7 +75,7 @@ struct Book: Identifiable, Equatable {
             self.image = image
             self.audioName = audioName
             self.pages = pages
-            self.pageContents = Book.generateRandomPageContents(count: 5)
+            self.pageContents = Book.generateRandomPageContents(count: pages)
             self.progress = progress
     }
     

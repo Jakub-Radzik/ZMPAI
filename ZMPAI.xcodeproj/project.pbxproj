@@ -23,6 +23,8 @@
 		3136A0B42CB064E500C7DFD8 /* YouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0B32CB064E500C7DFD8 /* YouTubePlayerView.swift */; };
 		3136A0B62CB172EB00C7DFD8 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0B52CB172EB00C7DFD8 /* StoreTests.swift */; };
 		3136A0C22CB178BE00C7DFD8 /* ReadBookViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0C12CB178BE00C7DFD8 /* ReadBookViewUITests.swift */; };
+		3136A0C42CB2B59F00C7DFD8 /* UserStory1UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0C32CB2B59F00C7DFD8 /* UserStory1UITest.swift */; };
+		31F6A6752CB2C69C00DE8BBE /* AudioViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		3136A0B32CB064E500C7DFD8 /* YouTubePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerView.swift; sourceTree = "<group>"; };
 		3136A0B52CB172EB00C7DFD8 /* StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
 		3136A0C12CB178BE00C7DFD8 /* ReadBookViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBookViewUITests.swift; sourceTree = "<group>"; };
+		3136A0C32CB2B59F00C7DFD8 /* UserStory1UITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStory1UITest.swift; sourceTree = "<group>"; };
+		31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewUITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				3136A0C12CB178BE00C7DFD8 /* ReadBookViewUITests.swift */,
+				3136A0C32CB2B59F00C7DFD8 /* UserStory1UITest.swift */,
+				31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */,
 			);
 			path = ZMPAIUITests;
 			sourceTree = "<group>";
@@ -194,6 +200,8 @@
 			dependencies = (
 			);
 			name = ZMPAI;
+			packageProductDependencies = (
+			);
 			productName = ZMPAI;
 			productReference = 3136A0672CAD9BEC00C7DFD8 /* ZMPAI.app */;
 			productType = "com.apple.product-type.application";
@@ -266,6 +274,8 @@
 				Base,
 			);
 			mainGroup = 3136A05E2CAD9BEC00C7DFD8;
+			packageReferences = (
+			);
 			productRefGroup = 3136A0682CAD9BEC00C7DFD8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -335,6 +345,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3136A0C42CB2B59F00C7DFD8 /* UserStory1UITest.swift in Sources */,
+				31F6A6752CB2C69C00DE8BBE /* AudioViewUITest.swift in Sources */,
 				3136A0C22CB178BE00C7DFD8 /* ReadBookViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

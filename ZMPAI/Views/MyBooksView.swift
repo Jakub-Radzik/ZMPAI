@@ -18,6 +18,7 @@ struct MyBooksView: View {
 
                             ProgressView(value: progress)
                                 .progressViewStyle(LinearProgressViewStyle(tint: .blue))
+                                .accessibilityIdentifier("bookProgress\(index)")
                         }
                         .background(Color(.systemGray6))
                         .cornerRadius(10)

@@ -7,6 +7,7 @@ struct CategoryView: View {
                 NavigationLink(destination: BooksCategoryView(categoryName: genre)) {
                     Text(genre.rawValue)
                 }
+                .accessibilityIdentifier(genre.rawValue)
             }
             .navigationTitle("Kategorie")
         }

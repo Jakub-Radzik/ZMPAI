@@ -6,7 +6,11 @@ struct ZMPAIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TabNavigator().environmentObject(bookStore)
+            if CommandLine.arguments.contains("-audioView") {
+                AudioView(audioName: "lotr_1_audio")
+            } else {
+                TabNavigator().environmentObject(bookStore)
+            }
         }
     }
 }

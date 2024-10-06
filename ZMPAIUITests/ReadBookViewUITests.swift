@@ -12,7 +12,6 @@ final class ReadBookViewUITests: XCTestCase {
 
         let bookTitle = app.staticTexts["bookTitle"]
         XCTAssertTrue(bookTitle.waitForExistence(timeout: 1), "Book title should be visible")
-        print(bookTitle)
 
         let expectedTitle = "The Hobbit"
         let notExpectedTitle = "Lord of the Rings"

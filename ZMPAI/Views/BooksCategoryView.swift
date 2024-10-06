@@ -36,6 +36,7 @@ struct BooksCategoryView: View {
                         .background(Color(.systemGray6))
                         .cornerRadius(10)
                     }
+                    .accessibilityIdentifier(book.title)
                 }
             }
             .padding()

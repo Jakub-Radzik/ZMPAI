@@ -63,6 +63,7 @@ struct BookPresentationView: View {
                         .background(Color.blue)
                         .cornerRadius(10)
                 }
+                .accessibilityIdentifier("rentBook")
                 .padding(.horizontal)
             }
 

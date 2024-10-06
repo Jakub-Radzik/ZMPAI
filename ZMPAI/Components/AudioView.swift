@@ -5,7 +5,7 @@ struct AudioView: View {
     let audioName: String
     
     @State private var audioPlayer: AVAudioPlayer?
-    @State private var isPlaying = false
+    @State internal var isPlaying = false // Change to internal
 
     func playMP3FromAssets() {
         if let asset = NSDataAsset(name: audioName) {
@@ -25,6 +25,10 @@ struct AudioView: View {
         audioPlayer?.stop()
         isPlaying = false
     }
+    
+    func isAudioPlaying() -> Bool {
+            return isPlaying
+    }
 
     var body: some View {
         HStack {
@@ -40,11 +44,13 @@ struct AudioView: View {
                     .frame(width: 50, height: 50)
                     .foregroundColor(isPlaying ? .red : .blue)
             }
+            .accessibilityIdentifier("toggleButton")
             Text("Odtwórz darmowy rozdział")
         }
         .padding()
     }
 }
+
 
 #Preview {
     AudioView(audioName: "lotr_audio")
