@@ -49,7 +49,7 @@ struct ProfileView: View {
                         .font(.headline)
                         .padding(.top, 16)
 
-                    let finishedBooksCount = bookStore.myBooks.filter { $0.progress == $0.pages }.count
+                    let finishedBooksCount = bookStore.myBooks.filter { $0.progress + 1 == $0.pages }.count
                     Text("Książki przeczytane: \(finishedBooksCount)")
                         .font(.headline)
                         .padding(.top, 8)
