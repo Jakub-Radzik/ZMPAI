@@ -25,6 +25,7 @@
 		3136A0C22CB178BE00C7DFD8 /* ReadBookViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0C12CB178BE00C7DFD8 /* ReadBookViewUITests.swift */; };
 		3136A0C42CB2B59F00C7DFD8 /* UserStory1UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0C32CB2B59F00C7DFD8 /* UserStory1UITest.swift */; };
 		31F6A6752CB2C69C00DE8BBE /* AudioViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */; };
+		31F6A6782CB3CB1D00DE8BBE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F6A6772CB3CB1D00DE8BBE /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		3136A0C12CB178BE00C7DFD8 /* ReadBookViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBookViewUITests.swift; sourceTree = "<group>"; };
 		3136A0C32CB2B59F00C7DFD8 /* UserStory1UITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStory1UITest.swift; sourceTree = "<group>"; };
 		31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewUITest.swift; sourceTree = "<group>"; };
+		31F6A6772CB3CB1D00DE8BBE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		3136A0692CAD9BEC00C7DFD8 /* ZMPAI */ = {
 			isa = PBXGroup;
 			children = (
+				31F6A6762CB3CB1100DE8BBE /* Types */,
 				3136A0A62CAFC7D100C7DFD8 /* Store */,
 				3136A0A52CAFC6FA00C7DFD8 /* Views */,
 				3136A0A42CAFC6F000C7DFD8 /* Components */,
@@ -182,6 +185,14 @@
 				3136A0A72CAFC83E00C7DFD8 /* Store.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		31F6A6762CB3CB1100DE8BBE /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				31F6A6772CB3CB1D00DE8BBE /* Book.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +340,7 @@
 				3136A0AC2CB00B3900C7DFD8 /* ReadBookView.swift in Sources */,
 				3136A09D2CAFBB6400C7DFD8 /* ProfileView.swift in Sources */,
 				3136A06B2CAD9BEC00C7DFD8 /* ZMPAIApp.swift in Sources */,
+				31F6A6782CB3CB1D00DE8BBE /* Book.swift in Sources */,
 				3136A0A12CAFBE5200C7DFD8 /* BookPresentationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

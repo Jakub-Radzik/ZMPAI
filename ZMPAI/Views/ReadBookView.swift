@@ -21,7 +21,6 @@ struct ReadBookView: View {
                     ScrollView {
                         Text(currentPageText)
                             .padding()
-                            .font(.system(size: bookStore.fontSize))
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                             .background(Color(.systemGray6))
                             .cornerRadius(10)
