@@ -3,6 +3,7 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var bookStore: BookStore
     @State private var isAnimating: Bool = false
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationView{
@@ -21,12 +22,12 @@ struct MainView: View {
                                     Text("Hit tygodnia!")
                                         .font(.largeTitle)
                                         .fontWeight(.bold)
-                                        .foregroundColor(.black)
+                                        .foregroundColor(colorScheme == .dark ? .white : .black)
                                     
                                     
                                     Text(bookStore.weeklyBook?.title ?? "")
                                         .font(.title2)
-                                        .foregroundColor(.black)
+                                        .foregroundColor(colorScheme == .dark ? .white : .black)
                                     
                                     Spacer()
                                 }
@@ -72,7 +73,7 @@ struct MainView: View {
                                                             
                                                             Text(book.title)
                                                                 .font(.headline)
-                                                                .foregroundColor(.black)
+                                                                .foregroundColor(colorScheme == .dark ? .white : .black)
                                                         }
                                                         .frame(width: 150)
                                                     }
@@ -130,6 +131,7 @@ struct MainView: View {
                                     .foregroundColor(.primary)
                                     .padding(.bottom, 10)
                                 YouTubePlayerView(videoID: "VzefaAiD9eA")
+                                Spacer().frame(height: 100)
                             }
                             .padding(.horizontal)
                             

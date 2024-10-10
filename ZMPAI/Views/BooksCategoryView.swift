@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct BooksCategoryView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var bookStore: BookStore
     let categoryName: Genre
 
@@ -29,7 +30,7 @@ struct BooksCategoryView: View {
                                 .truncationMode(.tail)
                                 .frame(height: 20)
                                 .padding(.top, 4)
-                                .foregroundColor(.black)
+                                .foregroundColor(colorScheme == .dark ? .white : .black)
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
