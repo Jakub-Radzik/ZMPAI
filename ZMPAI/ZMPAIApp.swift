@@ -10,7 +10,22 @@ struct ZMPAIApp: App {
                 AudioView(audioName: "lotr_1_audio")
             } else {
                 TabNavigator().environmentObject(bookStore)
+                    .onAppear{
+                        if ProcessInfo.processInfo.arguments.contains("UITesting"){
+                            setupMockDataForUITests()
+                        }
+                    }
             }
+            
         }
+    }
+    
+    // Function to set mock data for UI Tests
+    func setupMockDataForUITests() {
+        bookStore.myBooks = [
+            Book(title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship.", genre: .technical, image: "you_dont_know_js"),
+            Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: .technical, image: "swift"),
+            Book(title: "Introduction to Algorithms", author: "Thomas H. Cormen et al.", description: "A comprehensive textbook on algorithms.", genre: .technical, image: "swift")
+        ]
     }
 }

@@ -19,10 +19,12 @@ struct TabNavigator: View {
             
             MyBooksView()
                 .tabItem {
-                    Image(systemName: "book.fill")
+                    Image(
+                        systemName: "book.fill"
+                    )
                     Text("Twoje książki")
                 }
-                .accessibilityIdentifier("bookTab")
+                .accessibilityIdentifier("myBooksTab")
             
             ProfileView()
                 .tabItem {
@@ -37,6 +39,12 @@ struct TabNavigator: View {
 struct TabNavigator_Previews: PreviewProvider {
     static var previews: some View {
         let bookStore = BookStore()
+        
+        bookStore.myBooks = [
+            Book(title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship.", genre: .technical, image: "you_dont_know_js"),
+            Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: .technical, image: "swift"),
+            Book(title: "Introduction to Algorithms", author: "Thomas H. Cormen et al.", description: "A comprehensive textbook on algorithms.", genre: .technical, image: "swift")
+        ]
 
         return TabNavigator()
             .environmentObject(bookStore)

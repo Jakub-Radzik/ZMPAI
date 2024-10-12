@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21A7F0F92CB995B3002229C3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A7F0F82CB995B3002229C3 /* CardView.swift */; };
+		21A7F0FB2CB9BADF002229C3 /* MyBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A7F0FA2CB9BADF002229C3 /* MyBooksView.swift */; };
+		21A7F0FD2CB9C1B9002229C3 /* CardViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A7F0FC2CB9C1B9002229C3 /* CardViewUITest.swift */; };
 		3136A06B2CAD9BEC00C7DFD8 /* ZMPAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A06A2CAD9BEC00C7DFD8 /* ZMPAIApp.swift */; };
 		3136A06F2CAD9BED00C7DFD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3136A06E2CAD9BED00C7DFD8 /* Assets.xcassets */; };
 		3136A0722CAD9BED00C7DFD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3136A0712CAD9BED00C7DFD8 /* Preview Assets.xcassets */; };
 		3136A0952CADA2A500C7DFD8 /* TabNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0942CADA2A500C7DFD8 /* TabNavigator.swift */; };
 		3136A0972CAED40E00C7DFD8 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0962CAED40E00C7DFD8 /* CategoryView.swift */; };
-		3136A0992CAFB27200C7DFD8 /* MyBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0982CAFB27200C7DFD8 /* MyBooksView.swift */; };
 		3136A09B2CAFBA3300C7DFD8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A09A2CAFBA3300C7DFD8 /* MainView.swift */; };
 		3136A09D2CAFBB6400C7DFD8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A09C2CAFBB6400C7DFD8 /* ProfileView.swift */; };
-		3136A09F2CAFBC9E00C7DFD8 /* BooksCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A09E2CAFBC9E00C7DFD8 /* BooksCategoryView.swift */; };
+		3136A09F2CAFBC9E00C7DFD8 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A09E2CAFBC9E00C7DFD8 /* BooksView.swift */; };
 		3136A0A12CAFBE5200C7DFD8 /* BookPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0A02CAFBE5200C7DFD8 /* BookPresentationView.swift */; };
 		3136A0A32CAFC50B00C7DFD8 /* AudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0A22CAFC50B00C7DFD8 /* AudioView.swift */; };
 		3136A0A82CAFC83E00C7DFD8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136A0A72CAFC83E00C7DFD8 /* Store.swift */; };
@@ -46,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21A7F0F82CB995B3002229C3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		21A7F0FA2CB9BADF002229C3 /* MyBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksView.swift; sourceTree = "<group>"; };
+		21A7F0FC2CB9C1B9002229C3 /* CardViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewUITest.swift; sourceTree = "<group>"; };
 		3136A0672CAD9BEC00C7DFD8 /* ZMPAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMPAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3136A06A2CAD9BEC00C7DFD8 /* ZMPAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPAIApp.swift; sourceTree = "<group>"; };
 		3136A06E2CAD9BED00C7DFD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,10 +59,9 @@
 		3136A0812CAD9BED00C7DFD8 /* ZMPAIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZMPAIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3136A0942CADA2A500C7DFD8 /* TabNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigator.swift; sourceTree = "<group>"; };
 		3136A0962CAED40E00C7DFD8 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
-		3136A0982CAFB27200C7DFD8 /* MyBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksView.swift; sourceTree = "<group>"; };
 		3136A09A2CAFBA3300C7DFD8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3136A09C2CAFBB6400C7DFD8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		3136A09E2CAFBC9E00C7DFD8 /* BooksCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCategoryView.swift; sourceTree = "<group>"; };
+		3136A09E2CAFBC9E00C7DFD8 /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
 		3136A0A02CAFBE5200C7DFD8 /* BookPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPresentationView.swift; sourceTree = "<group>"; };
 		3136A0A22CAFC50B00C7DFD8 /* AudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioView.swift; sourceTree = "<group>"; };
 		3136A0A72CAFC83E00C7DFD8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -95,6 +99,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21A7F0F62CB9950E002229C3 /* BooksView */ = {
+			isa = PBXGroup;
+			children = (
+				21A7F0F72CB99564002229C3 /* Components */,
+				3136A09E2CAFBC9E00C7DFD8 /* BooksView.swift */,
+				21A7F0FA2CB9BADF002229C3 /* MyBooksView.swift */,
+			);
+			path = BooksView;
+			sourceTree = "<group>";
+		};
+		21A7F0F72CB99564002229C3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				21A7F0F82CB995B3002229C3 /* CardView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		3136A05E2CAD9BEC00C7DFD8 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +173,7 @@
 				3136A0C12CB178BE00C7DFD8 /* ReadBookViewUITests.swift */,
 				3136A0C32CB2B59F00C7DFD8 /* UserStory1UITest.swift */,
 				31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */,
+				21A7F0FC2CB9C1B9002229C3 /* CardViewUITest.swift */,
 			);
 			path = ZMPAIUITests;
 			sourceTree = "<group>";
@@ -168,10 +191,9 @@
 			isa = PBXGroup;
 			children = (
 				3136A0962CAED40E00C7DFD8 /* CategoryView.swift */,
-				3136A0982CAFB27200C7DFD8 /* MyBooksView.swift */,
 				3136A09A2CAFBA3300C7DFD8 /* MainView.swift */,
 				3136A09C2CAFBB6400C7DFD8 /* ProfileView.swift */,
-				3136A09E2CAFBC9E00C7DFD8 /* BooksCategoryView.swift */,
+				21A7F0F62CB9950E002229C3 /* BooksView */,
 				3136A0A02CAFBE5200C7DFD8 /* BookPresentationView.swift */,
 				3136A0942CADA2A500C7DFD8 /* TabNavigator.swift */,
 				3136A0AB2CB00B3900C7DFD8 /* ReadBookView.swift */,
@@ -330,13 +352,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3136A0B42CB064E500C7DFD8 /* YouTubePlayerView.swift in Sources */,
-				3136A09F2CAFBC9E00C7DFD8 /* BooksCategoryView.swift in Sources */,
-				3136A0992CAFB27200C7DFD8 /* MyBooksView.swift in Sources */,
+				3136A09F2CAFBC9E00C7DFD8 /* BooksView.swift in Sources */,
 				3136A09B2CAFBA3300C7DFD8 /* MainView.swift in Sources */,
 				3136A0952CADA2A500C7DFD8 /* TabNavigator.swift in Sources */,
 				3136A0A32CAFC50B00C7DFD8 /* AudioView.swift in Sources */,
+				21A7F0FB2CB9BADF002229C3 /* MyBooksView.swift in Sources */,
 				3136A0A82CAFC83E00C7DFD8 /* Store.swift in Sources */,
 				3136A0972CAED40E00C7DFD8 /* CategoryView.swift in Sources */,
+				21A7F0F92CB995B3002229C3 /* CardView.swift in Sources */,
 				3136A0AC2CB00B3900C7DFD8 /* ReadBookView.swift in Sources */,
 				3136A09D2CAFBB6400C7DFD8 /* ProfileView.swift in Sources */,
 				3136A06B2CAD9BEC00C7DFD8 /* ZMPAIApp.swift in Sources */,
@@ -359,6 +382,7 @@
 			files = (
 				3136A0C42CB2B59F00C7DFD8 /* UserStory1UITest.swift in Sources */,
 				31F6A6752CB2C69C00DE8BBE /* AudioViewUITest.swift in Sources */,
+				21A7F0FD2CB9C1B9002229C3 /* CardViewUITest.swift in Sources */,
 				3136A0C22CB178BE00C7DFD8 /* ReadBookViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -91,7 +91,7 @@ struct MainView: View {
 
                                 ScrollView(.horizontal, showsIndicators: false){
                                     HStack {
-                                        NavigationLink(destination: BooksCategoryView(categoryName: .fantasy)) {
+                                        NavigationLink(destination: BooksView(categoryName: .fantasy)) {
                                             Text("Fantasy")
                                                 .font(.headline)
                                                 .padding()
@@ -101,7 +101,7 @@ struct MainView: View {
                                         }
                                         .buttonStyle(PlainButtonStyle())
                                         
-                                        NavigationLink(destination: BooksCategoryView(categoryName: .technical)) {
+                                        NavigationLink(destination: BooksView(categoryName: .technical)) {
                                             Text("Literatura techniczna")
                                                 .font(.headline)
                                                 .padding()
@@ -111,7 +111,7 @@ struct MainView: View {
                                         }
                                         .buttonStyle(PlainButtonStyle())
                                         
-                                        NavigationLink(destination: BooksCategoryView(categoryName: .scienceFiction)) {
+                                        NavigationLink(destination: BooksView(categoryName: .scienceFiction)) {
                                             Text("Science Fiction")
                                                 .font(.headline)
                                                 .padding()
