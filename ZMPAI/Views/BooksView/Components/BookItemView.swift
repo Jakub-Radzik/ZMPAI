@@ -9,8 +9,7 @@ struct BookItemView: View {
     var body: some View {
         if isTwoColumnLayout {
             VStack {
-                Image(book.image)
-                    .resizable()
+                AsyncImage(url: URL(string: book.image))
                     .aspectRatio(contentMode: .fit)
                     .frame(
                         width: dynamicWidth(for: geometry.size.width),
@@ -35,9 +34,7 @@ struct BookItemView: View {
         } else {
             // HStack layout for single-column view
             HStack {
-                Image(book.image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                AsyncImage(url: URL(string: book.image))
                     .frame(
                         width: dynamicWidth(for: geometry.size.width) * 0.8,
                         height: dynamicHeight(for: geometry.size.height) * 0.8

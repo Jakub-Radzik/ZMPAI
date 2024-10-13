@@ -44,7 +44,6 @@ struct BookPresentationView: View {
             }
 
             if isRented {
-                ProgressView(value: Double(progress), total: Double(book.pages))  // Assuming book has pages property
                 NavigationLink(destination: ReadBookView(book: book)){
                     Text("Czytaj")
                         .font(.headline)
@@ -57,7 +56,7 @@ struct BookPresentationView: View {
             } else {
                 Button(action: {
                     bookStore.rentBook(book)
-                    progress = bookStore.getBookProgress(for: book.id) ?? 0  // Update progress when renting
+                    progress = bookStore.getBookProgress(for: book.id) ?? 0
                     showAlert = true
                 }) {
                     Text("Wypożycz książkę")
@@ -97,9 +96,9 @@ struct BookPresentationView_Previews: PreviewProvider {
         let bookStore = BookStore()
         
         bookStore.myBooks = [
-            Book(title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship.", genre: .technical, image: "you_dont_know_js"),
-            Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: .technical, image: "swift"),
-            Book(title: "Introduction to Algorithms", author: "Thomas H. Cormen et al.", description: "A comprehensive textbook on algorithms.", genre: .technical, image: "swift")
+            Book(title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship.", genre: "Literatura techniczna", image: "you_dont_know_js"),
+            Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: "Literatura techniczna", image: "swift"),
+            Book(title: "Introduction to Algorithms", author: "Thomas H. Cormen et al.", description: "A comprehensive textbook on algorithms.", genre: "Literatura techniczna", image: "swift")
         ]
 
         return NavigationView { 
@@ -107,7 +106,7 @@ struct BookPresentationView_Previews: PreviewProvider {
                 book: Book(title: "You Don't Know JS",
                      author: "Kyle Simpson",
                      description: "An in-depth series on JavaScript.",
-                     genre: .technical,
+                     genre: "Literatura techniczna",
                      image: "you_dont_know_js"))
             .environmentObject(bookStore)
         }
