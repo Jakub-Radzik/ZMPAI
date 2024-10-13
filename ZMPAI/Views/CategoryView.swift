@@ -4,7 +4,7 @@ struct CategoryView: View {
     var body: some View {
         NavigationView {
             List(Genre.allCases) { genre in
-                NavigationLink(destination: BooksCategoryView(categoryName: genre)) {
+                NavigationLink(destination: BooksView(categoryName: genre)) {
                     Text(genre.rawValue)
                 }
                 .accessibilityIdentifier(genre.rawValue)
