@@ -4,6 +4,7 @@ struct BookPresentationView: View {
     @EnvironmentObject var bookStore: BookStore
     let book: Book
     @State private var showAlert: Bool = false
+    @State private var progress: Int = 0
     
     var isRented: Bool {
         bookStore.isRented(bookId: book.id)
@@ -43,16 +44,20 @@ struct BookPresentationView: View {
             }
 
             if isRented {
-                Text("Książka wypożyczona")
-                    .font(.headline)
-                    .foregroundColor(.gray)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(10)
+                ProgressView(value: Double(progress), total: Double(book.pages))  // Assuming book has pages property
+                NavigationLink(destination: ReadBookView(book: book)){
+                    Text("Czytaj")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
             } else {
                 Button(action: {
                     bookStore.rentBook(book)
+                    progress = bookStore.getBookProgress(for: book.id) ?? 0  // Update progress when renting
                     showAlert = true
                 }) {
                     Text("Wypożycz książkę")
@@ -72,6 +77,10 @@ struct BookPresentationView: View {
         .padding()
         .navigationTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            // Fetch and set the book progress when the view appears
+            progress = bookStore.getBookProgress(for: book.id) ?? 0
+        }
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Success"),

@@ -47,6 +47,8 @@ class BookStore: ObservableObject {
                 myBooks[index].progress += 1
             }
         }
+        print(myBooks[0].title)
+        print(myBooks[0].progress)
     }
 
     func decrementPage(for bookId: UUID) {
@@ -55,9 +57,19 @@ class BookStore: ObservableObject {
                 myBooks[index].progress -= 1
             }
         }
+        print(myBooks[0].title)
+        print(myBooks[0].progress)
     }
 
     func isRented(bookId: UUID) -> Bool {
             return myBooks.contains(where: { $0.id == bookId })
         }
+    
+    func getBookProgress(for bookId: UUID) -> Int? {
+        if let index = myBooks.firstIndex(where: { $0.id == bookId }) {
+            return myBooks[index].progress
+        }
+        return nil
+    }
+
 }
