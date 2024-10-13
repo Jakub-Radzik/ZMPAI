@@ -5,7 +5,7 @@ struct AudioView: View {
     let audioName: String
     
     @State private var audioPlayer: AVAudioPlayer?
-    @State internal var isPlaying = false // Change to internal
+    @State internal var isPlaying = false
 
     func playMP3FromAssets() {
         if let asset = NSDataAsset(name: audioName) {
