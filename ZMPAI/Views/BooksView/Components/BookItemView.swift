@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct BookItemView: View {
+    @Environment(\.colorScheme) var colorScheme
     let book: Book
     let geometry: GeometryProxy
     let isTwoColumnLayout: Bool
@@ -25,11 +26,11 @@ struct BookItemView: View {
                     .truncationMode(.tail)
                     .frame(height: 20)
                     .padding(.top, 4)
-                    .foregroundColor(.black)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
             }
             .frame(maxWidth: .infinity)
             .padding()
-            .background(Color.white)
+            .background(colorScheme == .dark ? Color(.darkGray) : Color.white)
             .cornerRadius(10)
         } else {
             // HStack layout for single-column view
@@ -51,7 +52,7 @@ struct BookItemView: View {
                         .lineLimit(1)
                         .truncationMode(.tail)
                         .padding(.top, 4)
-                        .foregroundColor(.black)
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
                     
                     Text(book.author)
                         .font(.subheadline)
