@@ -12,8 +12,7 @@ struct BookPresentationView: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            Image(book.image)
-                .resizable()
+            AsyncImage(url: URL(string: book.image))
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 200, height: 300)
                 .clipped()
