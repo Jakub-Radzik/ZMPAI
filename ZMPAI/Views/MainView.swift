@@ -30,13 +30,7 @@ struct MainView: View {
                                         
                                         Spacer()
                                     }
-                                    
-                                    AsyncImage(url: URL(string: weeklyBook.image))
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 100, height: 150)
-                                        .clipped()
-                                        .background(Color.gray.opacity(0.2))
-                                        .cornerRadius(10)
+                                    BookImage(bookImage: weeklyBook.image, width: 100)
                                 }
                                 .padding(.top, 100)
                                 .scaleEffect(isAnimating ? 1.1 : 0.9)
@@ -64,12 +58,8 @@ struct MainView: View {
                                         ForEach(bestBooks) { book in
                                             NavigationLink(destination: BookPresentationView(book: book)){
                                                 VStack {
-                                                    AsyncImage(url: URL(string: book.image))
-                                                        .aspectRatio(contentMode: .fit)
-                                                        .frame(width: 100, height: 150)
-                                                        .clipped()
-                                                        .background(Color.gray.opacity(0.2))
-                                                        .cornerRadius(10)
+                                                    
+                                                    BookImage(bookImage: book.image, width: 100)
                                                     
                                                     Text(book.title)
                                                         .font(.headline)

@@ -31,6 +31,7 @@
 		31B964AE2CBBF5E600717CA6 /* BookGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964AD2CBBF5E600717CA6 /* BookGridView.swift */; };
 		31B964B02CBBF5FC00717CA6 /* ToggleLayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964AF2CBBF5FC00717CA6 /* ToggleLayoutButton.swift */; };
 		31B964B32CBC2CD500717CA6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964B22CBC2CD500717CA6 /* APIClient.swift */; };
+		31B964B62CBD155C00717CA6 /* BookImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964B52CBD155C00717CA6 /* BookImage.swift */; };
 		31F6A6752CB2C69C00DE8BBE /* AudioViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */; };
 		31F6A6782CB3CB1D00DE8BBE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F6A6772CB3CB1D00DE8BBE /* Book.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		31B964AF2CBBF5FC00717CA6 /* ToggleLayoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLayoutButton.swift; sourceTree = "<group>"; };
 		31B964B22CBC2CD500717CA6 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		31B964B42CBC379900717CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		31B964B52CBD155C00717CA6 /* BookImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookImage.swift; sourceTree = "<group>"; };
 		31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewUITest.swift; sourceTree = "<group>"; };
 		31F6A6772CB3CB1D00DE8BBE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +202,7 @@
 			children = (
 				3136A0A22CAFC50B00C7DFD8 /* AudioView.swift */,
 				3136A0B32CB064E500C7DFD8 /* YouTubePlayerView.swift */,
+				31B964B52CBD155C00717CA6 /* BookImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				3136A0A32CAFC50B00C7DFD8 /* AudioView.swift in Sources */,
 				21A7F0FB2CB9BADF002229C3 /* MyBooksView.swift in Sources */,
 				3136A0A82CAFC83E00C7DFD8 /* Store.swift in Sources */,
+				31B964B62CBD155C00717CA6 /* BookImage.swift in Sources */,
 				3136A0972CAED40E00C7DFD8 /* CategoryView.swift in Sources */,
 				21A7F0F92CB995B3002229C3 /* CardView.swift in Sources */,
 				3136A0AC2CB00B3900C7DFD8 /* ReadBookView.swift in Sources */,

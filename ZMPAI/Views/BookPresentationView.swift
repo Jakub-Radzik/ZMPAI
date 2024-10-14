@@ -12,12 +12,7 @@ struct BookPresentationView: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            AsyncImage(url: URL(string: book.image))
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 200, height: 300)
-                .clipped()
-                .cornerRadius(10)
-                .shadow(radius: 5)
+            BookImage(bookImage: book.image, width: 200)
 
             Text(book.title)
                 .font(.title)
@@ -95,9 +90,9 @@ struct BookPresentationView_Previews: PreviewProvider {
         let bookStore = BookStore()
         
         bookStore.myBooks = [
-            Book(title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship.", genre: "Literatura techniczna", image: "you_dont_know_js"),
-            Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: "Literatura techniczna", image: "swift"),
-            Book(title: "Introduction to Algorithms", author: "Thomas H. Cormen et al.", description: "A comprehensive textbook on algorithms.", genre: "Literatura techniczna", image: "swift")
+            Book(title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship.", genre: "Literatura techniczna", image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg"),
+            Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: "Literatura techniczna", image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg"),
+            Book(title: "Introduction to Algorithms", author: "Thomas H. Cormen et al.", description: "A comprehensive textbook on algorithms.", genre: "Literatura techniczna", image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg")
         ]
 
         return NavigationView { 
@@ -106,7 +101,7 @@ struct BookPresentationView_Previews: PreviewProvider {
                      author: "Kyle Simpson",
                      description: "An in-depth series on JavaScript.",
                      genre: "Literatura techniczna",
-                     image: "you_dont_know_js"))
+                     image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg"))
             .environmentObject(bookStore)
         }
     }

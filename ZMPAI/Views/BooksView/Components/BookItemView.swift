@@ -9,15 +9,7 @@ struct BookItemView: View {
     var body: some View {
         if isTwoColumnLayout {
             VStack {
-                AsyncImage(url: URL(string: book.image))
-                    .aspectRatio(contentMode: .fit)
-                    .frame(
-                        width: dynamicWidth(for: geometry.size.width),
-                        height: dynamicHeight(for: geometry.size.height)
-                    )
-                    .clipped()
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(10)
+                BookImage(bookImage: book.image, width: dynamicWidth(for: geometry.size.width))
                 
                 Text(book.title)
                     .font(.headline)
@@ -109,7 +101,7 @@ struct BookItemPreviews: PreviewProvider {
                             BooksGridView(
                                 books: books,
                                 geometry: geometry,
-                                isTwoColumnLayout: false
+                                isTwoColumnLayout: true
                             )
                             .padding()
                             .navigationTitle("Test")
