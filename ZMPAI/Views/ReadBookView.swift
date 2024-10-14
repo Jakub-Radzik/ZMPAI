@@ -9,8 +9,8 @@ struct ReadBookView: View {
 
     init(book: Book) {
         self.book = book
-        _currentPage = State(initialValue: book.progress)
-        _currentPageText = State(initialValue: book.pageContents[book.progress])
+        _currentPage = State(initialValue: 0)
+        _currentPageText = State(initialValue: "")
     }
 
     var body: some View {
@@ -43,7 +43,7 @@ struct ReadBookView: View {
                         .accessibilityIdentifier("previousPageButton")
                         .disabled(currentPage == 0)
 
-                        Text("Strona \(currentPage+1) / \(book.pages)")
+                        Text("Strona \(currentPage+1) /")
                             .font(.headline)
                             .padding()
                             .accessibilityIdentifier("pageText")
@@ -59,7 +59,7 @@ struct ReadBookView: View {
                                 .cornerRadius(10)
                         }
                         .accessibilityIdentifier("nextPageButton")
-                        .disabled(currentPage+1 == book.pages)
+                        .disabled(currentPage+1 == 0)
                     }
                     .padding(.horizontal)
                     
@@ -76,19 +76,9 @@ struct ReadBookView: View {
 
 
     private func nextPage() {
-        if currentPage+1 < book.pages {
-            bookStore.incrementPage(for: book.id)
-            currentPage += 1
-            currentPageText = book.pageContents[currentPage]
-        }
     }
 
     private func previousPage() {
-        if currentPage+1 > 0 {
-            bookStore.decrementPage(for: book.id)
-            currentPage -= 1
-            currentPageText = book.pageContents[currentPage]
-        }
     }
 }
 
@@ -96,7 +86,7 @@ struct ReadBookView_Previews: PreviewProvider {
     static var previews: some View {
         let bookStore = BookStore()
         
-        let book = Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: .technical, image: "swift")
+        let book = Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: "Literatura techniczna", image: "swift")
         
         bookStore.books.append(book)
 

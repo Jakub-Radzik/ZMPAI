@@ -30,6 +30,8 @@
 		31B964AC2CBBF5C500717CA6 /* BookItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964AB2CBBF5C500717CA6 /* BookItemView.swift */; };
 		31B964AE2CBBF5E600717CA6 /* BookGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964AD2CBBF5E600717CA6 /* BookGridView.swift */; };
 		31B964B02CBBF5FC00717CA6 /* ToggleLayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964AF2CBBF5FC00717CA6 /* ToggleLayoutButton.swift */; };
+		31B964B32CBC2CD500717CA6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964B22CBC2CD500717CA6 /* APIClient.swift */; };
+		31B964B62CBD155C00717CA6 /* BookImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964B52CBD155C00717CA6 /* BookImage.swift */; };
 		31F6A6752CB2C69C00DE8BBE /* AudioViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */; };
 		31F6A6782CB3CB1D00DE8BBE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F6A6772CB3CB1D00DE8BBE /* Book.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,9 @@
 		31B964AB2CBBF5C500717CA6 /* BookItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItemView.swift; sourceTree = "<group>"; };
 		31B964AD2CBBF5E600717CA6 /* BookGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookGridView.swift; sourceTree = "<group>"; };
 		31B964AF2CBBF5FC00717CA6 /* ToggleLayoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLayoutButton.swift; sourceTree = "<group>"; };
+		31B964B22CBC2CD500717CA6 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		31B964B42CBC379900717CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		31B964B52CBD155C00717CA6 /* BookImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookImage.swift; sourceTree = "<group>"; };
 		31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewUITest.swift; sourceTree = "<group>"; };
 		31F6A6772CB3CB1D00DE8BBE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +157,8 @@
 		3136A0692CAD9BEC00C7DFD8 /* ZMPAI */ = {
 			isa = PBXGroup;
 			children = (
+				31B964B42CBC379900717CA6 /* Info.plist */,
+				31B964B12CBC2CBD00717CA6 /* Api */,
 				31F6A6762CB3CB1100DE8BBE /* Types */,
 				3136A0A62CAFC7D100C7DFD8 /* Store */,
 				3136A0A52CAFC6FA00C7DFD8 /* Views */,
@@ -195,6 +202,7 @@
 			children = (
 				3136A0A22CAFC50B00C7DFD8 /* AudioView.swift */,
 				3136A0B32CB064E500C7DFD8 /* YouTubePlayerView.swift */,
+				31B964B52CBD155C00717CA6 /* BookImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -219,6 +227,14 @@
 				3136A0A72CAFC83E00C7DFD8 /* Store.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		31B964B12CBC2CBD00717CA6 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				31B964B22CBC2CD500717CA6 /* APIClient.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		31F6A6762CB3CB1100DE8BBE /* Types */ = {
@@ -369,11 +385,13 @@
 				31B964AC2CBBF5C500717CA6 /* BookItemView.swift in Sources */,
 				31B964AE2CBBF5E600717CA6 /* BookGridView.swift in Sources */,
 				3136A09B2CAFBA3300C7DFD8 /* MainView.swift in Sources */,
+				31B964B32CBC2CD500717CA6 /* APIClient.swift in Sources */,
 				3136A0952CADA2A500C7DFD8 /* TabNavigator.swift in Sources */,
 				31B964A62CBBF2E100717CA6 /* EmptyBooks.swift in Sources */,
 				3136A0A32CAFC50B00C7DFD8 /* AudioView.swift in Sources */,
 				21A7F0FB2CB9BADF002229C3 /* MyBooksView.swift in Sources */,
 				3136A0A82CAFC83E00C7DFD8 /* Store.swift in Sources */,
+				31B964B62CBD155C00717CA6 /* BookImage.swift in Sources */,
 				3136A0972CAED40E00C7DFD8 /* CategoryView.swift in Sources */,
 				21A7F0F92CB995B3002229C3 /* CardView.swift in Sources */,
 				3136A0AC2CB00B3900C7DFD8 /* ReadBookView.swift in Sources */,
@@ -549,6 +567,7 @@
 				DEVELOPMENT_TEAM = 38PRZDT3D8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ZMPAI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -578,6 +597,7 @@
 				DEVELOPMENT_TEAM = 38PRZDT3D8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ZMPAI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

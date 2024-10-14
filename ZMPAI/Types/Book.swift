@@ -19,77 +19,57 @@ let contents = [
 ]
 
 enum Genre: String, CaseIterable, Identifiable {
-    case fantasy = "Fantastyka"
-    case scienceFiction = "Science Fiction"
-    case technical = "Literatura techniczna"
+    case fantasy = "Fantasy" // 1
+    case scienceFiction = "Science Fiction" // 2
+    case technical = "Literatura techniczna" // 3
     
     var id: String { self.rawValue }
 }
 
 
-struct Book: Identifiable, Equatable {
+struct Book: Identifiable, Equatable, Codable {
     let id = UUID()
     let title: String
     let author: String
     let description: String
-    let genre: Genre
+    let genre: String
     let image: String
     let rating: Int = 4
-    let pages: Int
-    let pageContents: [String]
-    
-    private var _progress: Int = 1
-    var progress: Int {
-        get {
-            return _progress
-        }
-        set {
-            if newValue >= 0 && newValue <= pages {
-                _progress = newValue
-            } else if newValue > pages {
-                _progress = pages
-            } else {
-                _progress = 0
-            }
-        }
-    }
-    
+    let epubFile: String = ""
+    let epubContent: String = ""
     var audioName: String?
     
-    init(title: String, author: String, description: String, genre: Genre, image: String, audioName: String? = nil) {
-            self.title = title
-            self.author = author
-            self.description = description
-            self.genre = genre
-            self.image = image
-            self.audioName = audioName
-            self.pages = 100
-            self.pageContents = Book.generateRandomPageContents(count: 100)
-            self.progress = 0
+    private enum CodingKeys: String, CodingKey {
+        case title, author, description
+        case genre = "genre_name"
+        case image = "image_file", rating,  audioName = "audio_file_name" ,epubFile = "epub_file", epubContent = "epub_content"
     }
     
-    init(title: String, author: String, description: String, genre: Genre, image: String, pages: Int, progress: Int, audioName: String? = nil) {
+    init(title: String, author: String, description: String, genre: String, image: String, audioName: String? = nil) {
             self.title = title
             self.author = author
             self.description = description
             self.genre = genre
             self.image = image
             self.audioName = audioName
-            self.pages = pages
-            self.pageContents = Book.generateRandomPageContents(count: pages)
-            self.progress = progress
     }
     
-    init(title: String, author: String, description: String, genre: Genre, image: String, pages: Int, progress: Int, pageContents: [String], audioName: String? = nil) {
+    init(title: String, author: String, description: String, genre: String, image: String, pages: Int, progress: Int, audioName: String? = nil) {
             self.title = title
             self.author = author
             self.description = description
             self.genre = genre
             self.image = image
             self.audioName = audioName
-            self.pages = pages
-            self.pageContents = pageContents
-            self.progress = progress
+    }
+    
+    init(title: String, author: String, description: String, genre: String, image: String, pages: Int, progress: Int, pageContents: [String], audioName: String? = nil) {
+            self.title = title
+            self.author = author
+            self.description = description
+            self.genre = genre
+            self.image = image
+            self.audioName = audioName
     }
     
     private static func generateRandomPageContents(count: Int) -> [String] {
