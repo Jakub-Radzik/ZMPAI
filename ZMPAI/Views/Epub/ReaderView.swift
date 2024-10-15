@@ -1,83 +1,86 @@
 import SwiftUI
-import WebKit
-
-struct ChapterView: View {
-    let chapterURL: URL?
-
-    var body: some View {
-        WebView(url: chapterURL)
-            .navigationTitle("Chapter")
-    }
-}
-
-struct WebView: UIViewRepresentable {
-    var url: URL?
-
-    func makeUIView(context: Context) -> WKWebView {
-        let webView = WKWebView()
-        return webView
-    }
-
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        print("Loading URL: \(String(describing: url))") // Log URL
-        if let url = url {
-            let request = URLRequest(url: url)
-            uiView.load(request)
-        }
-    }
-}
 
 struct ReaderView: View {
     @State private var chapterURL: URL?
     @State private var isLoading = false
-
+    @State private var currentChapterIndex = 0
+    private let totalChapters = 5 // Adjust this to the total number of chapters you have
     private let loader = Loader()
-
+    let epubFile: String;
+    
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Load EPUB and View Chapter")
-                    .font(.largeTitle)
-                    .padding()
-
-                Button(action: loadEPUB) {
-                    Text("Load Chapter 1")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                }
-                .padding()
-
                 if isLoading {
                     ProgressView("Loading...")
                         .progressViewStyle(CircularProgressViewStyle())
                         .padding()
-                }
+                } else {
+                    WebView(url: chapterURL)
 
-                // Use NavigationLink for navigation
-                NavigationLink(destination: ChapterView(chapterURL: chapterURL), isActive: .constant(chapterURL != nil)) {
-                    EmptyView()
+                    HStack {
+                        Button(action: previousChapter) {
+                            Text("Previous")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
+                        }
+                        .disabled(currentChapterIndex == 0)
+
+                        Spacer()
+
+                        Button(action: nextChapter) {
+                            Text("Next")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
+                        }
+                        .disabled(currentChapterIndex >= totalChapters - 1)
+                    }
+                    .padding()
                 }
+            }
+            .onAppear {
+                loadChapter()
             }
         }
     }
 
-
-    private func loadEPUB() {
+    private func loadChapter() {
         isLoading = true
-        loader.loadChapter(from: "http://iosappapi.ddns.net:3111/media/epubs/pg11-images-3_fB4xYIE.epub", chapterNumber: 0) { url in
+        loader.loadChapter(from: epubFile, chapterNumber: currentChapterIndex) { url in
             DispatchQueue.main.async {
                 self.isLoading = false
                 if let url = url {
                     print("Loaded chapter URL: \(url)")
-                    chapterURL = url // This should trigger navigation
+                    chapterURL = url // This should trigger the ChapterView to update
                 } else {
                     print("Failed to load chapter")
                 }
             }
         }
     }
+    
+    
+    private func previousChapter() {
+        if currentChapterIndex > 0 {
+            currentChapterIndex -= 1
+            loadChapter() // Load the previous chapter
+        }
+    }
 
+    private func nextChapter() {
+        if currentChapterIndex < totalChapters - 1 {
+            currentChapterIndex += 1
+            loadChapter() // Load the next chapter
+        }
+    }
+}
 
+struct ReaderViewPreviews: PreviewProvider {
+    static var previews: some View {
+        ReaderView(epubFile: "http://iosappapi.ddns.net:3111/media/epubs/pg11-images-3_fB4xYIE.epub")
+    }
 }

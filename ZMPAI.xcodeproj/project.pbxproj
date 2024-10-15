@@ -38,6 +38,7 @@
 		31B964DB2CBEB75300717CA6 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 31B964DA2CBEB75300717CA6 /* ZIPFoundation */; };
 		31B964DD2CBEB7CD00717CA6 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964DC2CBEB7CD00717CA6 /* Loader.swift */; };
 		31B964E32CBEB9FF00717CA6 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964E22CBEB9FF00717CA6 /* ReaderView.swift */; };
+		31B964E52CBEC7C600717CA6 /* HelpViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964E42CBEC7C600717CA6 /* HelpViews.swift */; };
 		31F6A6752CB2C69C00DE8BBE /* AudioViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */; };
 		31F6A6782CB3CB1D00DE8BBE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F6A6772CB3CB1D00DE8BBE /* Book.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,7 @@
 		31B964D12CBEB5F100717CA6 /* UnzipHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnzipHelper.swift; sourceTree = "<group>"; };
 		31B964DC2CBEB7CD00717CA6 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		31B964E22CBEB9FF00717CA6 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		31B964E42CBEC7C600717CA6 /* HelpViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViews.swift; sourceTree = "<group>"; };
 		31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewUITest.swift; sourceTree = "<group>"; };
 		31F6A6772CB3CB1D00DE8BBE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,6 +259,7 @@
 				31B964D12CBEB5F100717CA6 /* UnzipHelper.swift */,
 				31B964DC2CBEB7CD00717CA6 /* Loader.swift */,
 				31B964E22CBEB9FF00717CA6 /* ReaderView.swift */,
+				31B964E42CBEC7C600717CA6 /* HelpViews.swift */,
 			);
 			path = Epub;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				3136A0AC2CB00B3900C7DFD8 /* ReadBookView.swift in Sources */,
 				3136A09D2CAFBB6400C7DFD8 /* ProfileView.swift in Sources */,
 				3136A06B2CAD9BEC00C7DFD8 /* ZMPAIApp.swift in Sources */,
+				31B964E52CBEC7C600717CA6 /* HelpViews.swift in Sources */,
 				31F6A6782CB3CB1D00DE8BBE /* Book.swift in Sources */,
 				3136A0A12CAFBE5200C7DFD8 /* BookPresentationView.swift in Sources */,
 			);
