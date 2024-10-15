@@ -35,7 +35,7 @@ struct Book: Identifiable, Equatable, Codable {
     let genre: String
     let image: String
     let rating: Int = 4
-    let epubFile: String = ""
+    let epubFile: String?
     let epubContent: String = ""
     var audioName: String?
     
@@ -45,29 +45,32 @@ struct Book: Identifiable, Equatable, Codable {
         case image = "image_file", rating,  audioName = "audio_file_name" ,epubFile = "epub_file", epubContent = "epub_content"
     }
     
-    init(title: String, author: String, description: String, genre: String, image: String, audioName: String? = nil) {
+    init(title: String, author: String, description: String, genre: String, epubFile:String? = nil, image: String, audioName: String? = nil) {
             self.title = title
             self.author = author
             self.description = description
             self.genre = genre
+            self.epubFile = epubFile
             self.image = image
             self.audioName = audioName
     }
     
-    init(title: String, author: String, description: String, genre: String, image: String, pages: Int, progress: Int, audioName: String? = nil) {
+    init(title: String, author: String, description: String, genre: String, epubFile: String? = nil, image: String, pages: Int, progress: Int, audioName: String? = nil) {
             self.title = title
             self.author = author
             self.description = description
             self.genre = genre
+            self.epubFile = epubFile
             self.image = image
             self.audioName = audioName
     }
     
-    init(title: String, author: String, description: String, genre: String, image: String, pages: Int, progress: Int, pageContents: [String], audioName: String? = nil) {
+    init(title: String, author: String, description: String, genre: String, epubFile: String? = nil, image: String, pages: Int, progress: Int, pageContents: [String], audioName: String? = nil) {
             self.title = title
             self.author = author
             self.description = description
             self.genre = genre
+            self.epubFile = epubFile
             self.image = image
             self.audioName = audioName
     }

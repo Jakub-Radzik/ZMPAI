@@ -22,7 +22,7 @@ struct ReaderView: View {
                         Button(action: previousChapter) {
                             Text("Previous")
                                 .padding()
-                                .background(Color.blue)
+                                .background(currentChapterIndex == 0 ? Color.gray : Color.blue)
                                 .foregroundColor(.white)
                                 .cornerRadius(8)
                         }
@@ -33,7 +33,7 @@ struct ReaderView: View {
                         Button(action: nextChapter) {
                             Text("Next")
                                 .padding()
-                                .background(Color.blue)
+                                .background(currentChapterIndex >= totalChapters - 1 ? Color.gray : Color.blue)
                                 .foregroundColor(.white)
                                 .cornerRadius(8)
                         }
