@@ -38,7 +38,7 @@ struct BookPresentationView: View {
             }
 
             if isRented {
-                NavigationLink(destination: ReadBookView(book: book)){
+                NavigationLink(destination: ReaderView()){
                     Text("Czytaj")
                         .font(.headline)
                         .foregroundColor(.white)
