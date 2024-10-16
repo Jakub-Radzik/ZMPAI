@@ -38,14 +38,15 @@ struct Book: Identifiable, Equatable, Codable {
     let epubFile: String?
     let epubContent: String = ""
     var audioName: String?
+    var chapters: Int
     
     private enum CodingKeys: String, CodingKey {
         case title, author, description
         case genre = "genre_name"
-        case image = "image_file", rating,  audioName = "audio_file_name" ,epubFile = "epub_file", epubContent = "epub_content"
+        case image = "image_file", rating,  audioName = "audio_file_name" ,epubFile = "epub_file", epubContent = "epub_content", chapters = "chapters"
     }
     
-    init(title: String, author: String, description: String, genre: String, epubFile:String? = nil, image: String, audioName: String? = nil) {
+    init(title: String, author: String, description: String, genre: String, epubFile:String? = nil, chapters: Int, image: String, audioName: String? = nil) {
             self.title = title
             self.author = author
             self.description = description
@@ -53,9 +54,10 @@ struct Book: Identifiable, Equatable, Codable {
             self.epubFile = epubFile
             self.image = image
             self.audioName = audioName
+            self.chapters = chapters
     }
     
-    init(title: String, author: String, description: String, genre: String, epubFile: String? = nil, image: String, pages: Int, progress: Int, audioName: String? = nil) {
+    init(title: String, author: String, description: String, genre: String, epubFile: String? = nil, chapters: Int, image: String, pages: Int, progress: Int, audioName: String? = nil) {
             self.title = title
             self.author = author
             self.description = description
@@ -63,9 +65,11 @@ struct Book: Identifiable, Equatable, Codable {
             self.epubFile = epubFile
             self.image = image
             self.audioName = audioName
+            self.chapters = chapters
+
     }
     
-    init(title: String, author: String, description: String, genre: String, epubFile: String? = nil, image: String, pages: Int, progress: Int, pageContents: [String], audioName: String? = nil) {
+    init(title: String, author: String, description: String, genre: String, epubFile: String? = nil, chapters: Int, image: String, pages: Int, progress: Int, pageContents: [String], audioName: String? = nil) {
             self.title = title
             self.author = author
             self.description = description
@@ -73,6 +77,7 @@ struct Book: Identifiable, Equatable, Codable {
             self.epubFile = epubFile
             self.image = image
             self.audioName = audioName
+            self.chapters = chapters
     }
     
     private static func generateRandomPageContents(count: Int) -> [String] {

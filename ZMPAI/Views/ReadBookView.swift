@@ -86,7 +86,7 @@ struct ReadBookView_Previews: PreviewProvider {
     static var previews: some View {
         let bookStore = BookStore()
         
-        let book = Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: "Literatura techniczna", image: "swift")
+        let book = Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: "Literatura techniczna", chapters: 11, image: "swift")
         
         bookStore.books.append(book)
 
