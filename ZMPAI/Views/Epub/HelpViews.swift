@@ -3,6 +3,8 @@ import WebKit
 
 struct WebView: UIViewRepresentable {
     var url: URL?
+    @Binding var scrollPosition: Double
+    @Binding var webView: WKWebView?
 
     func makeUIView(context: Context) -> WKWebView {
         let config = WKWebViewConfiguration()
@@ -13,7 +15,11 @@ struct WebView: UIViewRepresentable {
         webView.scrollView.minimumZoomScale = 1.0
         webView.scrollView.maximumZoomScale = 4.0 // Set maximum zoom scale as desired
         webView.scrollView.delegate = context.coordinator // Set the delegate
-        
+
+        DispatchQueue.main.async {
+            self.webView = webView
+        }
+
         return webView
     }
 
@@ -37,6 +43,16 @@ struct WebView: UIViewRepresentable {
 
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
             print("Finished loading \(String(describing: parent.url))")
+            
+            // Set the scroll position after the content is loaded with a delay
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                print("Setting scroll position to \(self.parent.scrollPosition)")
+                print("Content height: \(webView.scrollView.contentSize.height)")
+                let yOffset = CGFloat(self.parent.scrollPosition) * (webView.scrollView.contentSize.height - webView.scrollView.bounds.height)
+                if yOffset.isFinite {
+                    webView.scrollView.setContentOffset(CGPoint(x: 0, y: yOffset), animated: true)
+                }
+            }
         }
 
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
@@ -45,6 +61,18 @@ struct WebView: UIViewRepresentable {
         
         func viewForZooming(in scrollView: UIScrollView) -> UIView? {
             return scrollView.subviews.first // Allow zooming on the first subview
+        }
+        
+        func saveScrollPosition() {
+            guard let webView = parent.webView else { return }
+            let scrollHeight = webView.scrollView.contentSize.height - webView.scrollView.bounds.height
+            if scrollHeight > 0 {
+                let newScrollPosition = Double(webView.scrollView.contentOffset.y / scrollHeight)
+                if newScrollPosition.isFinite && newScrollPosition != parent.scrollPosition {
+                    parent.scrollPosition = newScrollPosition
+                    print("Saved scroll position: \(newScrollPosition)")
+                }
+            }
         }
     }
 }

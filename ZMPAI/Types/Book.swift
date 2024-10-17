@@ -39,6 +39,8 @@ struct Book: Identifiable, Equatable, Codable {
     let epubContent: String = ""
     var audioName: String?
     var chapters: Int
+    var currentChapter: Int = 0
+    var scrollPosition: Double = 0.0
     
     private enum CodingKeys: String, CodingKey {
         case title, author, description

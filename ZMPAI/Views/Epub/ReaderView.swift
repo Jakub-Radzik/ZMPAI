@@ -1,16 +1,17 @@
 import SwiftUI
-
 import SWXMLHash
-
+import WebKit
 
 struct ReaderView: View {
+    @State private var scrollPosition: Double = 0.0
     @State private var chapterURL: URL?
     @State private var isLoading = false
-    @State private var currentChapterIndex: Int = 0
-    @State private var chapterTitles: [String] = []
-    private let loader = Loader()
-    let epubFile: String;
-    let book: Book;
+    @State private var webView: WKWebView? = nil
+    @State private var loadingChapter: Int? = nil
+    @State private var chapterNumberTemp: Int = 0
+    @Binding var book: Book
+    let epubFile: String
+    private let loader = Loader() // Dodajemy instancję Loader
     
     var body: some View {
         NavigationStack {
@@ -20,73 +21,98 @@ struct ReaderView: View {
                         .progressViewStyle(CircularProgressViewStyle())
                         .padding()
                 } else {
-                    WebView(url: chapterURL).frame(maxWidth: .infinity)
-
+                    WebView(url: chapterURL, scrollPosition: $scrollPosition, webView: $webView)
+                        .frame(maxWidth: .infinity)
+                    
                     HStack {
                         Button(action: previousChapter) {
-                            Text("Previous")            
+                            Text("Previous")
                                 .font(.subheadline)
                                 .padding(8)
-                                .background(currentChapterIndex == 0 ? Color.gray : Color.blue)
+                                .background(chapterNumberTemp == 0 ? Color.gray : Color.blue)
                                 .foregroundColor(.white)
                                 .cornerRadius(8)
                         }
-                        .disabled(currentChapterIndex == 0)
-
+                        .disabled(chapterNumberTemp == 0)
+                        
                         Spacer()
-
+                        
                         Button(action: nextChapter) {
-                            Text("Next")           
+                            Text("Next")
                                 .font(.subheadline)
                                 .padding(8)
-                                .background(currentChapterIndex >= book.chapters - 1 ? Color.gray : Color.blue)
+                                .background(chapterNumberTemp >= book.chapters - 1 ? Color.gray : Color.blue)
                                 .foregroundColor(.white)
                                 .cornerRadius(8)
                         }
-                        .disabled(currentChapterIndex >= book.chapters - 1)
+                        .disabled(chapterNumberTemp >= book.chapters - 1)
                     }
                     .padding()
                 }
             }
             .onAppear {
+                loadState()
                 loadChapter()
             }
-        }
-    }
-
-    private func loadChapter() {
-        isLoading = true
-        loader.loadChapter(from: epubFile, chapterNumber: currentChapterIndex) { url in
-            DispatchQueue.main.async {
-                self.isLoading = false
-                if let url = url {
-                    print("Loaded chapter URL: \(url)")
-                    chapterURL = url // This should trigger the ChapterView to update
-                } else {
-                    print("Failed to load chapter")
-                }
+            .onDisappear {
+                saveState()
             }
         }
     }
     
-    
-    private func previousChapter() {
-        if currentChapterIndex > 0 {
-            currentChapterIndex -= 1
-            loadChapter() // Load the previous chapter
+    private func loadChapter() {
+        isLoading = true
+        loader.loadChapter(from: epubFile, chapterNumber: chapterNumberTemp) { url in
+            DispatchQueue.main.async {
+                // Sprawdź, czy aktualnie ładowany rozdział jest zgodny z bieżącym stanem
+                    self.isLoading = false
+                    if let url = url {
+                        print("Loaded chapter URL: \(url)")
+                        self.chapterURL = url
+                    } else {
+                        print("Failed to load chapter")
+                    }
+                
+            }
         }
     }
 
+    private func loadState() {
+
+        chapterNumberTemp = book.currentChapter
+        scrollPosition = book.scrollPosition
+    }
+    
+    private func saveState() {
+        // Save the current chapter index and scroll position
+        book.currentChapter = chapterNumberTemp
+        if let webView = webView {
+            let coordinator = WebView.Coordinator(WebView(url: chapterURL, scrollPosition: $scrollPosition, webView: $webView))
+            coordinator.saveScrollPosition()
+        }
+        book.scrollPosition = scrollPosition
+    }
+    
+    private func previousChapter() {
+        if chapterNumberTemp > 0 {
+            chapterNumberTemp -= 1
+            scrollPosition = 0.0
+            loadChapter()
+        }
+    }
+    
     private func nextChapter() {
-        if currentChapterIndex < book.chapters - 1 {
-            currentChapterIndex += 1
-            loadChapter() // Load the next chapter
+        if chapterNumberTemp < book.chapters - 1 {
+            chapterNumberTemp += 1
+            scrollPosition = 0.0
+
+            loadChapter()
         }
     }
 }
 
 struct ReaderViewPreviews: PreviewProvider {
     static var previews: some View {
-        ReaderView(epubFile: "http://iosappapi.ddns.net:3111/media/epubs/pg11-images-3_fB4xYIE.epub", book: Book(title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship.", genre: "Literatura techniczna", chapters: 11, image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg"))
+        ReaderView(book: .constant(Book(title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship.", genre: "Literatura techniczna", chapters: 11, image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg")), epubFile: "http://iosappapi.ddns.net:3111/media/epubs/pg11-images-3_fB4xYIE.epub")
     }
 }

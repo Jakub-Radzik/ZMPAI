@@ -2,7 +2,12 @@ import SwiftUI
 
 struct BookPresentationView: View {
     @EnvironmentObject var bookStore: BookStore
-    let book: Book
+    @State private var book: Book
+
+    init(book: Book) {
+        self._book = State(initialValue: book)
+    }
+
     @State private var showAlert: Bool = false
     @State private var progress: Int = 0
     
@@ -38,7 +43,7 @@ struct BookPresentationView: View {
             }
 
             if isRented {
-                NavigationLink(destination: ReaderView(epubFile: book.epubFile ?? "", book: book)){
+                NavigationLink(destination: ReaderView(book: $book, epubFile: book.epubFile ?? "")){
                     Text("Czytaj")
                         .font(.headline)
                         .foregroundColor(.white)
