@@ -63,16 +63,18 @@ struct WebView: UIViewRepresentable {
             return scrollView.subviews.first // Allow zooming on the first subview
         }
         
-        func saveScrollPosition() {
-            guard let webView = parent.webView else { return }
+        func saveScrollPosition() -> Double {
+            guard let webView = parent.webView else { return 0.0}
             let scrollHeight = webView.scrollView.contentSize.height - webView.scrollView.bounds.height
             if scrollHeight > 0 {
                 let newScrollPosition = Double(webView.scrollView.contentOffset.y / scrollHeight)
                 if newScrollPosition.isFinite && newScrollPosition != parent.scrollPosition {
                     parent.scrollPosition = newScrollPosition
                     print("Saved scroll position: \(newScrollPosition)")
+                    return newScrollPosition
                 }
             }
+            return 0.0
         }
     }
 }

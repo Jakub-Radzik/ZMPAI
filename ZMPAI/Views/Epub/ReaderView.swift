@@ -78,7 +78,9 @@ struct ReaderView: View {
     }
 
     private func loadState() {
-
+        print("Loading state")
+        print("Current chapter: \(book.currentChapter)")
+        print("Scroll position: \(book.scrollPosition)")
         chapterNumberTemp = book.currentChapter
         scrollPosition = book.scrollPosition
     }
@@ -88,9 +90,15 @@ struct ReaderView: View {
         book.currentChapter = chapterNumberTemp
         if let webView = webView {
             let coordinator = WebView.Coordinator(WebView(url: chapterURL, scrollPosition: $scrollPosition, webView: $webView))
-            coordinator.saveScrollPosition()
+            scrollPosition = coordinator.saveScrollPosition()
         }
+        
         book.scrollPosition = scrollPosition
+        print("Saved state")
+        print("Current chapter: \(book.currentChapter)")
+        print("Scroll position: \(book.scrollPosition)")
+        print("Scroll position: \(scrollPosition)")
+        
     }
     
     private func previousChapter() {
