@@ -33,6 +33,7 @@ struct ReaderView: View {
                             Text("Previous")
                                 .font(.subheadline)
                                 .padding(8)
+                                .frame(maxWidth: .infinity) // Make the button expand to fill available space
                                 .background(chapterNumberTemp == 0 ? Color.gray : Color.blue)
                                 .foregroundColor(.white)
                                 .cornerRadius(8)
@@ -45,6 +46,7 @@ struct ReaderView: View {
                             Text("Next")
                                 .font(.subheadline)
                                 .padding(8)
+                                .frame(maxWidth: .infinity) // Make the button expand to fill available space
                                 .background(chapterNumberTemp >= book.chapters - 1 ? Color.gray : Color.blue)
                                 .foregroundColor(.white)
                                 .cornerRadius(8)
