@@ -33,7 +33,7 @@ struct ReaderView: View {
                             Text("Previous")
                                 .font(.subheadline)
                                 .padding(8)
-                                .frame(maxWidth: .infinity) // Make the button expand to fill available space
+                                .frame(width: UIScreen.main.bounds.width * 0.25) // Set the width to 25% of the screen width
                                 .background(chapterNumberTemp == 0 ? Color.gray : Color.blue)
                                 .foregroundColor(.white)
                                 .cornerRadius(8)
@@ -46,7 +46,7 @@ struct ReaderView: View {
                             Text("Next")
                                 .font(.subheadline)
                                 .padding(8)
-                                .frame(maxWidth: .infinity) // Make the button expand to fill available space
+                                .frame(width: UIScreen.main.bounds.width * 0.25) // Set the width to 25% of the screen width
                                 .background(chapterNumberTemp >= book.chapters - 1 ? Color.gray : Color.blue)
                                 .foregroundColor(.white)
                                 .cornerRadius(8)
@@ -82,7 +82,7 @@ struct ReaderView: View {
     }
 
     private func loadState() {
-        var progress = bookStore.getProgress(for: book.id)
+        let progress = bookStore.getProgress(for: book.id)
         
         chapterNumberTemp = progress?.currentChapter ?? 0;
         scrollPosition = progress?.scrollPosition ?? 0.0;
