@@ -43,7 +43,7 @@ struct BookPresentationView: View {
             }
 
             if isRented {
-                NavigationLink(destination: ReaderView(book: $book, epubFile: book.epubFile ?? "")){
+                NavigationLink(destination: ReaderView(book: book, epubFile: book.epubFile ?? "")){
                     Text("Czytaj")
                         .font(.headline)
                         .foregroundColor(.white)

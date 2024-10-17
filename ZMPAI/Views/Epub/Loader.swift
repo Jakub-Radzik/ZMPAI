@@ -3,7 +3,7 @@ import Foundation
 class Loader {
     func loadChapter(from epubURLString: String, chapterNumber: Int, completion: @escaping (URL?) -> Void) {
         guard let epubURL = URL(string: epubURLString) else {
-            print("Invalid EPUB URL: \(epubURLString)")
+//            print("Invalid EPUB URL: \(epubURLString)")
             completion(nil)
             return
         }
@@ -15,13 +15,13 @@ class Loader {
         // Download the EPUB file
         let task = URLSession.shared.downloadTask(with: epubURL) { location, response, error in
             if let error = error {
-                print("Error downloading EPUB: \(error)")
+//                print("Error downloading EPUB: \(error)")
                 completion(nil)
                 return
             }
 
             guard let location = location else {
-                print("Download location is nil")
+//                print("Download location is nil")
                 completion(nil)
                 return
             }
@@ -30,21 +30,21 @@ class Loader {
             if FileManager.default.fileExists(atPath: localEpubURL.path) {
                 do {
                     try FileManager.default.removeItem(at: localEpubURL)
-                    print("Removed existing EPUB file at: \(localEpubURL)")
+//                    print("Removed existing EPUB file at: \(localEpubURL)")
                 } catch {
-                    print("Error removing existing EPUB file: \(error)")
+//                    print("Error removing existing EPUB file: \(error)")
                 }
             }
 
             // Move the downloaded file to the documents directory
             do {
                 try FileManager.default.moveItem(at: location, to: localEpubURL)
-                print("EPUB downloaded successfully at: \(localEpubURL)")
+//                print("EPUB downloaded successfully at: \(localEpubURL)")
 
                 // Unzip and parse the EPUB file
                 UnzipHelper.unzipEPUB(epubURL: localEpubURL) { unzipDirectory in
                     guard let unzipDirectory = unzipDirectory else {
-                        print("Error unzipping epub: unzipDirectory is nil")
+//                        print("Error unzipping epub: unzipDirectory is nil")
                         completion(nil)
                         return
                     }
@@ -55,7 +55,7 @@ class Loader {
                     }
                 }
             } catch {
-                print("Error moving downloaded EPUB file: \(error)")
+//                print("Error moving downloaded EPUB file: \(error)")
                 completion(nil)
             }
         }

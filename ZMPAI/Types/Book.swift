@@ -98,3 +98,8 @@ struct Book: Identifiable, Equatable, Codable {
         return lhs.title == rhs.title && lhs.author == rhs.author
     }
 }
+
+struct BookProgress {
+    var currentChapter: Int
+    var scrollPosition: Double
+}
