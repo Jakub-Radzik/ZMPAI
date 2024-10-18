@@ -41,7 +41,7 @@ struct ReaderView: View {
                         .disabled(chapterNumberTemp == 0)
                         
                     Spacer()
-                       Text("Strona \(chapterNumberTemp + 1)/\(book.chapters)")
+                        Text("Strona \(chapterNumberTemp + 1)/\(book.chapters)")
                        Spacer()
                         
                         Button(action: nextChapter) {
@@ -54,6 +54,7 @@ struct ReaderView: View {
                                 .cornerRadius(8)
                         }
                         .disabled(chapterNumberTemp >= book.chapters - 1)
+                        .accessibilityIdentifier("nextPageButton")
                     }
                     .padding()
                 }

@@ -11,7 +11,12 @@ struct ZMPAIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if CommandLine.arguments.contains("-audioView") {
+            if CommandLine.arguments.contains("-mockApi") {
+                let mockApi = MockAPIClient()
+                let store = BookStore(apiClient: mockApi)
+                TabNavigator().environmentObject(store)
+                
+            } else if CommandLine.arguments.contains("-audioView") {
                 AudioView(audioName: "lotr_1_audio")
             } else {
                 TabNavigator().environmentObject(bookStore)

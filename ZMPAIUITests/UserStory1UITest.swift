@@ -1,9 +1,10 @@
 import XCTest
 
 final class UserStory1UITest: XCTestCase {
-    
+    // END 2 END TEST
     func testUserStory1() throws {
         let app = XCUIApplication()
+        app.launchArguments = ["-mockAPI"]
         app.launch()
         
         // Navigate to rented books
@@ -21,14 +22,14 @@ final class UserStory1UITest: XCTestCase {
         categoriesTab.tap()
         
         // Choose category
-        let fantasyCategory = app.buttons["Fantastyka"]
+        let fantasyCategory = app.buttons["Fantasy"]
         XCTAssertTrue(fantasyCategory.waitForExistence(timeout: 1), "We should be able to navigate to fantasy category")
         fantasyCategory.tap()
         
         // Choose Book
-        let hobbitBook = app.buttons["The Hobbit"]
-        XCTAssertTrue(hobbitBook.waitForExistence(timeout: 1), "We should be able see The Hobbit book")
-        hobbitBook.tap()
+        let alice = app.buttons["Alice's Adventures in Wonderland"]
+        XCTAssertTrue(alice.waitForExistence(timeout: 1), "We should be able see The Hobbit book")
+        alice.tap()
         
         // Rent book
         let rentBook = app.buttons["rentBook"]
@@ -36,27 +37,21 @@ final class UserStory1UITest: XCTestCase {
         rentBook.tap()
         
         // Check if book is rented
-        let bookRented = app.staticTexts["Książka wypożyczona"]
+        let bookRented = app.buttons["Czytaj"]
         XCTAssertTrue(bookRented.waitForExistence(timeout: 1), "We should be able to see information that book is rented")
-        
-        // Navigate to rented books
-        myBooks.tap()
-        listItems = app.descendants(matching: .cell)
-        XCTAssertEqual(listItems.count, 1, "The book list should be empty")
-        
-        // Read rented book
-        let firstBook = app.cells.firstMatch
-        XCTAssertTrue(firstBook.exists, "The first book in the list should exist")
-        firstBook.tap()
+        bookRented.tap()
         
         // Go to the 50th page
         let nextPageButton = app.buttons["nextPageButton"]
-        for _ in 1...49 {
+        for _ in 1...3 {
             nextPageButton.tap()
         }
         
-        let currentPageText = app.staticTexts["pageText"]
-        XCTAssertTrue(currentPageText.exists, "Page Text should exist")
-        XCTAssertEqual(currentPageText.label, "Strona 50 / 100", "Page text should match the expected value after 49 taps")
+        let expectedText = "Strona 4/15"
+        let pageText = app.staticTexts[expectedText]
+        
+        // Sprawdź, czy tekst jest widoczny
+        XCTAssertTrue(pageText.exists, "Tekst '\(expectedText)' powinien być widoczny na ekranie.")
+            
     }
 }

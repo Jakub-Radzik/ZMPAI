@@ -20,11 +20,24 @@ final class BookStoreTests: XCTestCase {
     func testFetchWeeklyBookSuccess() {
         let expectedBook = bookMock
         mockAPIClient.fetchBookResult = .success(expectedBook)
-        
+
+        // Create an expectation
+        let expectation = self.expectation(description: "fetchWeeklyBook should succeed")
+
+        // Fetch the weekly book
         bookStore.fetchWeeklyBook()
-        
-        XCTAssertEqual(bookStore.weeklyBook?.title, expectedBook.title)
-        XCTAssertEqual(bookStore.weeklyBook?.author, expectedBook.author)
+
+        // Wait for a brief moment for the asynchronous call to complete
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            XCTAssertEqual(self.bookStore.weeklyBook?.title, expectedBook.title)
+            XCTAssertEqual(self.bookStore.weeklyBook?.author, expectedBook.author)
+
+            // Fulfill the expectation to indicate that the asynchronous call has completed
+            expectation.fulfill()
+        }
+
+        // Wait for expectations
+        wait(for: [expectation], timeout: 1.0)
     }
     
     func testFetchWeeklyBookFailure() {
@@ -38,11 +51,24 @@ final class BookStoreTests: XCTestCase {
     func testFetchBestBooksSuccess() {
         let expectedBooks = [bookMock, bookMock]
         mockAPIClient.fetchBooksResult = .success(expectedBooks)
-        
+
+        // Create an expectation
+        let expectation = self.expectation(description: "fetchBestBooks should succeed")
+
+        // Fetch the best books
         bookStore.fetchBestBooks()
-        
-        XCTAssertEqual(bookStore.bestBooks?.count, expectedBooks.count)
-        XCTAssertEqual(bookStore.bestBooks?.first?.title, expectedBooks.first?.title)
+
+        // Wait for a brief moment for the asynchronous call to complete
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            XCTAssertEqual(self.bookStore.bestBooks?.count, expectedBooks.count)
+            XCTAssertEqual(self.bookStore.bestBooks?.first?.title, expectedBooks.first?.title)
+
+            // Fulfill the expectation to indicate that the asynchronous call has completed
+            expectation.fulfill()
+        }
+
+        // Wait for expectations
+        wait(for: [expectation], timeout: 1.0)
     }
     
     func testFetchBestBooksFailure() {
