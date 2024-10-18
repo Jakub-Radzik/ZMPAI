@@ -2,7 +2,12 @@ import SwiftUI
 
 struct BookPresentationView: View {
     @EnvironmentObject var bookStore: BookStore
-    let book: Book
+    @State private var book: Book
+
+    init(book: Book) {
+        self._book = State(initialValue: book)
+    }
+
     @State private var showAlert: Bool = false
     @State private var progress: Int = 0
     
@@ -38,7 +43,7 @@ struct BookPresentationView: View {
             }
 
             if isRented {
-                NavigationLink(destination: ReadBookView(book: book)){
+                NavigationLink(destination: ReaderView(book: book, epubFile: book.epubFile ?? "")){
                     Text("Czytaj")
                         .font(.headline)
                         .foregroundColor(.white)
@@ -90,9 +95,9 @@ struct BookPresentationView_Previews: PreviewProvider {
         let bookStore = BookStore()
         
         bookStore.myBooks = [
-            Book(title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship.", genre: "Literatura techniczna", image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg"),
-            Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: "Literatura techniczna", image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg"),
-            Book(title: "Introduction to Algorithms", author: "Thomas H. Cormen et al.", description: "A comprehensive textbook on algorithms.", genre: "Literatura techniczna", image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg")
+            Book(title: "Clean Code", author: "Robert C. Martin", description: "A handbook of agile software craftsmanship.", genre: "Literatura techniczna", chapters: 11, image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg"),
+            Book(title: "The Pragmatic Programmer", author: "Andrew Hunt and David Thomas", description: "A guide to becoming a better programmer.", genre: "Literatura techniczna", chapters: 11, image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg"),
+            Book(title: "Introduction to Algorithms", author: "Thomas H. Cormen et al.", description: "A comprehensive textbook on algorithms.", genre: "Literatura techniczna", chapters: 11, image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg")
         ]
 
         return NavigationView { 
@@ -101,7 +106,7 @@ struct BookPresentationView_Previews: PreviewProvider {
                      author: "Kyle Simpson",
                      description: "An in-depth series on JavaScript.",
                      genre: "Literatura techniczna",
-                     image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg"))
+                           chapters: 11, image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg"))
             .environmentObject(bookStore)
         }
     }

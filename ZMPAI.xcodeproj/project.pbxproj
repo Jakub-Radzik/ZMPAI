@@ -32,6 +32,13 @@
 		31B964B02CBBF5FC00717CA6 /* ToggleLayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964AF2CBBF5FC00717CA6 /* ToggleLayoutButton.swift */; };
 		31B964B32CBC2CD500717CA6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964B22CBC2CD500717CA6 /* APIClient.swift */; };
 		31B964B62CBD155C00717CA6 /* BookImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964B52CBD155C00717CA6 /* BookImage.swift */; };
+		31B964D02CBEB5E400717CA6 /* EpubParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964CF2CBEB5E400717CA6 /* EpubParser.swift */; };
+		31B964D22CBEB5F100717CA6 /* UnzipHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964D12CBEB5F100717CA6 /* UnzipHelper.swift */; };
+		31B964D52CBEB68900717CA6 /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = 31B964D42CBEB68900717CA6 /* SWXMLHash */; };
+		31B964DB2CBEB75300717CA6 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 31B964DA2CBEB75300717CA6 /* ZIPFoundation */; };
+		31B964DD2CBEB7CD00717CA6 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964DC2CBEB7CD00717CA6 /* Loader.swift */; };
+		31B964E32CBEB9FF00717CA6 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964E22CBEB9FF00717CA6 /* ReaderView.swift */; };
+		31B964E52CBEC7C600717CA6 /* HelpViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B964E42CBEC7C600717CA6 /* HelpViews.swift */; };
 		31F6A6752CB2C69C00DE8BBE /* AudioViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */; };
 		31F6A6782CB3CB1D00DE8BBE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F6A6772CB3CB1D00DE8BBE /* Book.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +90,11 @@
 		31B964B22CBC2CD500717CA6 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		31B964B42CBC379900717CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		31B964B52CBD155C00717CA6 /* BookImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookImage.swift; sourceTree = "<group>"; };
+		31B964CF2CBEB5E400717CA6 /* EpubParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpubParser.swift; sourceTree = "<group>"; };
+		31B964D12CBEB5F100717CA6 /* UnzipHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnzipHelper.swift; sourceTree = "<group>"; };
+		31B964DC2CBEB7CD00717CA6 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		31B964E22CBEB9FF00717CA6 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		31B964E42CBEC7C600717CA6 /* HelpViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViews.swift; sourceTree = "<group>"; };
 		31F6A6742CB2C69C00DE8BBE /* AudioViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewUITest.swift; sourceTree = "<group>"; };
 		31F6A6772CB3CB1D00DE8BBE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31B964D52CBEB68900717CA6 /* SWXMLHash in Frameworks */,
+				31B964DB2CBEB75300717CA6 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +224,7 @@
 		3136A0A52CAFC6FA00C7DFD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				31B964BA2CBEAD8E00717CA6 /* Epub */,
 				3136A0962CAED40E00C7DFD8 /* CategoryView.swift */,
 				3136A09A2CAFBA3300C7DFD8 /* MainView.swift */,
 				3136A09C2CAFBB6400C7DFD8 /* ProfileView.swift */,
@@ -237,6 +252,18 @@
 			path = Api;
 			sourceTree = "<group>";
 		};
+		31B964BA2CBEAD8E00717CA6 /* Epub */ = {
+			isa = PBXGroup;
+			children = (
+				31B964CF2CBEB5E400717CA6 /* EpubParser.swift */,
+				31B964D12CBEB5F100717CA6 /* UnzipHelper.swift */,
+				31B964DC2CBEB7CD00717CA6 /* Loader.swift */,
+				31B964E22CBEB9FF00717CA6 /* ReaderView.swift */,
+				31B964E42CBEC7C600717CA6 /* HelpViews.swift */,
+			);
+			path = Epub;
+			sourceTree = "<group>";
+		};
 		31F6A6762CB3CB1100DE8BBE /* Types */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +289,8 @@
 			);
 			name = ZMPAI;
 			packageProductDependencies = (
+				31B964D42CBEB68900717CA6 /* SWXMLHash */,
+				31B964DA2CBEB75300717CA6 /* ZIPFoundation */,
 			);
 			productName = ZMPAI;
 			productReference = 3136A0672CAD9BEC00C7DFD8 /* ZMPAI.app */;
@@ -336,6 +365,8 @@
 			);
 			mainGroup = 3136A05E2CAD9BEC00C7DFD8;
 			packageReferences = (
+				31B964D32CBEB68900717CA6 /* XCRemoteSwiftPackageReference "SWXMLHash" */,
+				31B964D92CBEB75300717CA6 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 			);
 			productRefGroup = 3136A0682CAD9BEC00C7DFD8 /* Products */;
 			projectDirPath = "";
@@ -382,9 +413,12 @@
 				3136A0B42CB064E500C7DFD8 /* YouTubePlayerView.swift in Sources */,
 				31B964B02CBBF5FC00717CA6 /* ToggleLayoutButton.swift in Sources */,
 				3136A09F2CAFBC9E00C7DFD8 /* BooksView.swift in Sources */,
+				31B964DD2CBEB7CD00717CA6 /* Loader.swift in Sources */,
 				31B964AC2CBBF5C500717CA6 /* BookItemView.swift in Sources */,
 				31B964AE2CBBF5E600717CA6 /* BookGridView.swift in Sources */,
+				31B964E32CBEB9FF00717CA6 /* ReaderView.swift in Sources */,
 				3136A09B2CAFBA3300C7DFD8 /* MainView.swift in Sources */,
+				31B964D22CBEB5F100717CA6 /* UnzipHelper.swift in Sources */,
 				31B964B32CBC2CD500717CA6 /* APIClient.swift in Sources */,
 				3136A0952CADA2A500C7DFD8 /* TabNavigator.swift in Sources */,
 				31B964A62CBBF2E100717CA6 /* EmptyBooks.swift in Sources */,
@@ -392,11 +426,13 @@
 				21A7F0FB2CB9BADF002229C3 /* MyBooksView.swift in Sources */,
 				3136A0A82CAFC83E00C7DFD8 /* Store.swift in Sources */,
 				31B964B62CBD155C00717CA6 /* BookImage.swift in Sources */,
+				31B964D02CBEB5E400717CA6 /* EpubParser.swift in Sources */,
 				3136A0972CAED40E00C7DFD8 /* CategoryView.swift in Sources */,
 				21A7F0F92CB995B3002229C3 /* CardView.swift in Sources */,
 				3136A0AC2CB00B3900C7DFD8 /* ReadBookView.swift in Sources */,
 				3136A09D2CAFBB6400C7DFD8 /* ProfileView.swift in Sources */,
 				3136A06B2CAD9BEC00C7DFD8 /* ZMPAIApp.swift in Sources */,
+				31B964E52CBEC7C600717CA6 /* HelpViews.swift in Sources */,
 				31F6A6782CB3CB1D00DE8BBE /* Book.swift in Sources */,
 				3136A0A12CAFBE5200C7DFD8 /* BookPresentationView.swift in Sources */,
 			);
@@ -732,6 +768,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		31B964D32CBEB68900717CA6 /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/drmohundro/SWXMLHash";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
+		31B964D92CBEB75300717CA6 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.19;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		31B964D42CBEB68900717CA6 /* SWXMLHash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31B964D32CBEB68900717CA6 /* XCRemoteSwiftPackageReference "SWXMLHash" */;
+			productName = SWXMLHash;
+		};
+		31B964DA2CBEB75300717CA6 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31B964D92CBEB75300717CA6 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3136A05F2CAD9BEC00C7DFD8 /* Project object */;
 }
