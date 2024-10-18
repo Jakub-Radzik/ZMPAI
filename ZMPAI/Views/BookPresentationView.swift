@@ -10,6 +10,8 @@ struct BookPresentationView: View {
 
     @State private var showAlert: Bool = false
     @State private var progress: Int = 0
+    @State private var totalPages: Int = 0
+    
     
     var isRented: Bool {
         bookStore.isRented(bookId: book.id)
@@ -43,6 +45,14 @@ struct BookPresentationView: View {
             }
 
             if isRented {
+                VStack {
+                    Text("\(totalPages > 0 ? Int(Double(progress) / Double(totalPages) * 100) : 0)%")
+                        .font(.headline)
+
+                    ProgressView(value: Double(progress), total: Double(totalPages))
+                        .padding()
+                }
+                    
                 NavigationLink(destination: ReaderView(book: book, epubFile: book.epubFile ?? "")){
                     Text("Czytaj")
                         .font(.headline)
@@ -55,7 +65,8 @@ struct BookPresentationView: View {
             } else {
                 Button(action: {
                     bookStore.rentBook(book)
-                    progress = bookStore.getBookProgress(for: book.id) ?? 0
+                    progress = bookStore.getProgress(for: book.id)?.currentChapter ?? 0
+                    totalPages = book.chapters
                     showAlert = true
                 }) {
                     Text("Wypożycz książkę")
@@ -76,8 +87,8 @@ struct BookPresentationView: View {
         .navigationTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            // Fetch and set the book progress when the view appears
-            progress = bookStore.getBookProgress(for: book.id) ?? 0
+            progress = bookStore.getProgress(for: book.id)?.currentChapter ?? 0
+            totalPages = book.chapters
         }
         .alert(isPresented: $showAlert) {
             Alert(
@@ -104,7 +115,7 @@ struct BookPresentationView_Previews: PreviewProvider {
             BookPresentationView(
                 book: Book(title: "You Don't Know JS",
                      author: "Kyle Simpson",
-                     description: "An in-depth series on JavaScript.",
+                     description: "An in-depth series on JavaScript. An in-depth series on JavaScript.An in-depth series on JavaScript. An in-depth series on JavaScript.An in-depth series on JavaScript. An in-depth series on JavaScript.An in-depth series on JavaScript. An in-depth series on JavaScript.An in-depth series on JavaScript. An in-depth series on JavaScript.An in-depth series on JavaScript. An in-depth series on JavaScript.An in-depth series on JavaScript. An in-depth series on JavaScript.An in-depth series on JavaScript. An in-depth series on JavaScript.An in-depth series on JavaScript. An in-depth series on JavaScript.An in-depth series on JavaScript. An in-depth series on JavaScript.",
                      genre: "Literatura techniczna",
                            chapters: 11, image: "http://iosappapi.ddns.net:3111/media/images/pg11.cover.medium.jpg"))
             .environmentObject(bookStore)

@@ -1,6 +1,11 @@
 import Foundation
 
-class APIClient {
+protocol APIClientProtocol {
+    func fetchBook(by id: String, completion: @escaping (Result<Book, Error>) -> Void)
+    func fetchBooks(by genreId: Int, completion: @escaping (Result<[Book], Error>) -> Void)
+}
+
+class APIClient: APIClientProtocol {
     private let baseURL = "http://iosappapi.ddns.net:3111/books/"
     
     func fetchBook(by id: String, completion: @escaping (Result<Book, Error>) -> Void) {

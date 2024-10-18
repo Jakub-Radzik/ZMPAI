@@ -8,9 +8,11 @@ class BookStore: ObservableObject {
     @Published var bestBooks: [Book]?
     @Published var genreBooks: [Book] = []
     
-    private let apiClient = APIClient()
+    private let apiClient: APIClientProtocol
+        
     
-    init() {
+    init(apiClient: APIClientProtocol = APIClient()) {
+        self.apiClient = apiClient
         fetchWeeklyBook()
         fetchBestBooks()
     }
@@ -96,17 +98,9 @@ class BookStore: ObservableObject {
             }
         }
     
-    
-    
-    func incrementPage(for bookId: UUID) {
-    }
-
-    func decrementPage(for bookId: UUID) {
-    }
-
     func isRented(bookId: UUID) -> Bool {
-            return myBooks.contains(where: { $0.id == bookId })
-        }
+        return myBooks.contains(where: { $0.id == bookId })
+    }
     
     func getBookProgress(for bookId: UUID) -> Int? {
         return 10

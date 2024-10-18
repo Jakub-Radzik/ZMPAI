@@ -30,7 +30,7 @@ struct ReaderView: View {
                     
                     HStack {
                         Button(action: previousChapter) {
-                            Text("Previous")
+                            Text("Wstecz")
                                 .font(.subheadline)
                                 .padding(8)
                                 .frame(width: UIScreen.main.bounds.width * 0.25) // Set the width to 25% of the screen width
@@ -40,10 +40,12 @@ struct ReaderView: View {
                         }
                         .disabled(chapterNumberTemp == 0)
                         
-                        Spacer()
+                    Spacer()
+                       Text("Strona \(chapterNumberTemp + 1)/\(book.chapters)")
+                       Spacer()
                         
                         Button(action: nextChapter) {
-                            Text("Next")
+                            Text("Dalej")
                                 .font(.subheadline)
                                 .padding(8)
                                 .frame(width: UIScreen.main.bounds.width * 0.25) // Set the width to 25% of the screen width

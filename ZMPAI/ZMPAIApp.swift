@@ -2,7 +2,12 @@ import SwiftUI
 
 @main
 struct ZMPAIApp: App {
-    @StateObject private var bookStore = BookStore()
+    @StateObject private var bookStore: BookStore
+    
+    init() {
+        let api = APIClient()
+        _bookStore = StateObject(wrappedValue: BookStore(apiClient: api))
+    }
     
     var body: some Scene {
         WindowGroup {
