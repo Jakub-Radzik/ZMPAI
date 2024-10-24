@@ -43,9 +43,18 @@ struct WebView: UIViewRepresentable {
 
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
             print("Finished loading \(String(describing: parent.url))")
-            
+            webView.evaluateJavaScript("""
+                document.body.style.width = '94vw';
+                document.body.style.margin = '0 auto';
+            """) { _, error in
+                if let error = error {
+                    print("Failed to set width: \(error.localizedDescription)")
+                }
+            }
             // Set the scroll position after the content is loaded with a delay
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                //ustaw zawartość scroll view aby wypełniała na szerość cały ekra
+                
                 print("Setting scroll position to \(self.parent.scrollPosition)")
                 print("Content height: \(webView.scrollView.contentSize.height)")
                 let yOffset = CGFloat(self.parent.scrollPosition) * (webView.scrollView.contentSize.height - webView.scrollView.bounds.height)
